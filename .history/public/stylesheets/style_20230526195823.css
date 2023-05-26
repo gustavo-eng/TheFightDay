@@ -56,17 +56,12 @@ nav {
   color: #333;
   margin-bottom: 20px;
   text-align: justify;
-  background-color: #ffffff;
-  width: 94vh;
-  border-radius: 15px;
-  border: solid 0.7px black;
-  padding: 18px;
 }
 
 .proposta_title {
   position: relative;
-  /*   background-color: red; */
-  display: flex;
+/*   background-color: red; */
+  display:flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
@@ -78,7 +73,7 @@ nav {
   position: absolute;
   bottom: -2px;
   left: 1;
-  width: 24vh;
+  width: 9%;
   height: 3px;
   background-color: green;
 }
