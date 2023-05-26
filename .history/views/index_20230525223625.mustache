@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+    <title>TODO APP</title>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      header {
+          background-color: #333;
+          height: 80px;
+          border-bottom: 3.2px solid green;
+      }
+
+      nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 100%;
+          padding: 0 20px;
+          color: #fff;
+      }
+
+      .logo img {
+          height: 60px;
+      }
+
+      .menu {
+          list-style: none;
+          display: flex;
+      }
+
+      .menu li {
+          margin-right: 20px;
+      }
+
+      .menu li a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 16px;
+      }
+
+      .menu li a:hover {
+          color: green;
+      }
+
+      .container_proposta {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 130vh;
+        /* background-color: red; */
+        margin-top: 4vh;
+      }
+
+
+
+      .login-form {
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          height: 34%;
+          margin-top: 2%;
+          background-color: #545252;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          width: 55vh;
+
+      }
+
+      .login-form h2 {
+          /* background-color: white; */
+          color: white;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .login-form input[type="text"],
+      .login-form input[type="password"] {
+          /* background-color: purple; */
+          width: 38vh;
+          height: 30%;
+          /* padding: 10px; */
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          font-size: 16px;
+          outline-width: 0;
+      }
+
+      .login-form button {
+          width: 30%;
+          /* padding: 10px; */
+          height: 30%;
+          border: none;
+          background-color: #4CAF50;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 3px;
+
+      }
+
+      .login-form button:hover {
+          background-color: #45a049;
+      }
+
+       footer {
+    /* display: flex; */
+
+    background-color: #333;
+    color: #fff;
+    padding: 9px 0;
+    font-size: 14px;
+    width: 100%;
+    border-top: 3.2px solid green;
+    /* margin-top: auto; */
+
+
+
+  }
+
+  .container {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    /* background-color: purple;  */
+  }
+
+
+  .footer-logo img {
+    height: 50px;
+    /* background-color: blue; */
+  }
+
+  .footer-links ul {
+    /* background-color: rgb(89, 89, 24); */
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+  }
+
+  .footer-links li {
+    /* background-color: rgb(33, 59, 6); */
+    display: inline-block;
+    margin-right: 90px;
+  }
+
+  .footer-links a {
+    /* background-color: blueviolet; */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-social a {
+    margin-right: 10px;
+  }
+
+  .footer-social img {
+    height: 20px;
+  }
+
+  .container_main {
+    display: flex;
+    flex: 1;
+    /* background-color: pink; */
+    flex-direction: column-reverse;
+    align-content: flex-end;
+
+
+  }
+
+
+    </style>
+  </head>
+  <body>
+      <div>
+             <header>
+                <nav>
+                <div class="logo">
+                    <a href="#">
+                        <img src="https://static.wixstatic.com/media/5b4b97_a2e5c36cfd584f3aa512ad8b07f30727~mv2.png/v1/fill/w_111,h_121,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/NOVVA%20LOGO%20COM%20EFEITO%20SEM%20SOMBRA.png" alt="Logo"/>
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li><a href="#">Proposta</a></li>
+                    <li><a href="/description">Detalhes</a></li>
+                    <li><a href="#">Desenvolvedor</a></li>
+                    <li><a href="#">Tecnologias</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                </nav>
+            </header>
+             <div className="container_proposta">
+                <p>
+                Este projeto visa desenvolver um sistema que oferece suporte à gestão de atletas e competições, com o objetivo de facilitar a administração das academias de judô e da Federação Paranaense de Judô. O sistema será completamente integrado aos dados da Confederação Brasileira de Judô (CBJ). Os atletas serão responsáveis por inserir suas informações e comprovante de pagamento para as competições em que participarão. Os professores, por sua vez, irão revisar e confirmar todas as informações fornecidas pelos atletas, garantindo que, no dia em que a federação verificar os dados, tudo esteja correto e organizado. As categorias e faixas etárias serão inseridas pelos próprios atletas. Cada atleta e professor terá acesso ao formulário específico de sua academia, enquanto a Federação Paranaense terá acesso a todas as academias e aos dados dos alunos relacionados à competição.
+                </p>
+             </div>
+             <div class="login-form">
+
+                <h2> Login  </h2>
+                <form>
+
+                    <input type="text" placeholder="Usuário" required />
+                    <input type="password" placeholder="Senha" required />
+                    <button type="submit">Entrar</button>
+
+                </form>
+              </div>
+              <div  class="container_main">
+              <footer>
+                <div class="container">
+                    <div class="footer-logo">
+
+                    </div>
+                        <div class="footer-links">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Sobre</a></li>
+                                <li><a href="#">Calendário</a></li>
+                                <li><a href="#">Notícias</a></li>
+                                <li><a href="#">Contato</a></li>
+                            </ul>
+                        </div>
+                    <div class="footer-social">
+                        <a href="#"><img src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_33,h_33,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/23fd2a2be53141ed810f4d3dcdcd01fa.png" alt="Facebook"/></a>
+                        <a href="#"><img src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_33,h_33,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/81af6121f84c41a5b4391d7d37fce12a.png" alt="Instagram"/></a>
+                        <a href="#"><img src="https://static.wixstatic.com/media/203dcdc2ac8b48de89313f90d2a4cda1.png/v1/fill/w_33,h_33,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/203dcdc2ac8b48de89313f90d2a4cda1.png" alt="YouTube"/></a>
+                    </div>
+                  </div>
+                </footer>
+        </div>
+
+        </div>
+
+    {{! <script src="javascripts/taskcontrol.js" type="module"></script> }}
+
+  </body>
+</html>
