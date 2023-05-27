@@ -1,21 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var filter = require('../utils/filterFile')
-
 const fs = require('fs/promises');
 
 
+// import '../public/documents/detalhes.txt'
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/login', function(req, res, next) {
+
+  res.render('index', { title: 'Express' });
+
 });
 
-
-router.get("/logout", (req, res) => {
-  res.redirect("/")
-})
 
 
 router.get('/description', async (req, res) => { // MELHORAR
@@ -27,12 +24,26 @@ router.get('/description', async (req, res) => { // MELHORAR
   }
 })
 
+function extractTechnologies(data) {
+  const regex = /\d+\.\s+(.+):\s(.+)/g;
+  const technologies = [];
 
+  let match;
+  while ((match = regex.exec(data)) !== null) {
+    const technology = {
+      name: match[1],
+      description: match[2]
+    };
+    technologies.push(technology);
+  }
+
+  return technologies;
+}
 router.get('/tecnologia', async (req, res) => {
 
   try {
     const data = await fs.readFile(path.join(__dirname, '../public/documents/bibliotecas.txt'), { encoding: 'utf8' });
-    const technologies = filter.extractTechnologies(data);
+    const technologies = extractTechnologies(data);
 
     res.render('tecnologia', {technologies: technologies})
 
@@ -41,10 +52,6 @@ router.get('/tecnologia', async (req, res) => {
     res.status(500).send('Erro ao ler o arquivo.');
   }
 
-})
-
-router.get('desenvolvedor', (req, res) => {
-  res.send('Essa tela esta em desenvolvimento ')
 })
 
 module.exports = router;

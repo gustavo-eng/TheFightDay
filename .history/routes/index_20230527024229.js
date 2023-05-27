@@ -43,9 +43,5 @@ router.get('/tecnologia', async (req, res) => {
 
 })
 
-router.get('desenvolvedor', (req, res) => {
-  res.send('Essa tela esta em desenvolvimento ')
-})
-
 module.exports = router;
 

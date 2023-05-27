@@ -117,7 +117,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 17.5vh;
+    padding-left: 6vh;
     margin-bottom: 5vh;
 }
 
@@ -129,6 +129,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-self: center;
-  color: rgb(65, 65, 65);
+  color: rgb(55, 55, 56);
 
+}
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 1;
+  width: 24vh;
+  height: 3px;
+  background-color: green;
 }
