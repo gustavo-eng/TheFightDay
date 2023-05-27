@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 });
 
-router.get('/description', async (req, res) => { // MELHORAR
+router.get('/description', async (req, res) => {
   const data = await fs.readFile(path.join(__dirname, '../public/documents/detalhes.txt'), { encoding: 'utf8' });
   if(!data) {
     res.status(404).send('arquivo nao encontrado')
@@ -21,14 +21,6 @@ router.get('/description', async (req, res) => { // MELHORAR
     res.render('descricao', {data: data})
   }
 })
-
-router.get('/tecnologia', (req, res) => {
-  res.render('tecnologia')
-})
-
-
-
-
 
 
 module.exports = router;

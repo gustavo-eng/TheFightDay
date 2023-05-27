@@ -1,0 +1,17 @@
+
+
+Tecnologias, ferramentas e bibliotecas Utilizadas no projeto
+
+1. Express
+2. Node.js
+3. HTML
+4. CSS
+5. Mustache
+
+
+8. Git: Um sistema de controle de versão distribuído usado para rastrear e gerenciar o código-fonte do projeto.
+9. Visual Studio Code: Uma IDE (Integrated Development Environment) popular e poderosa para desenvolvimento web, com suporte a extensões e depuração.
+10. Postman: Uma ferramenta para testar APIs, permitindo enviar solicitações HTTP e verificar as respostas.
+11. MongoDB: Um banco de dados NoSQL baseado em documentos, que pode ser usado com o Node.js para armazenar e recuperar dados.
+12. Mongoose: Uma biblioteca de modelagem de objetos do MongoDB para Node.js, que simplifica a interação com o banco de dados MongoDB.
+13. Bootstrap: Um framework CSS popular que fornece componentes e estilos predefinidos para ajudar no desenvolvimento responsivo e ágil de páginas web.

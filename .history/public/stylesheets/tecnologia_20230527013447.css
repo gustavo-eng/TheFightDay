@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(162, 162, 162);
+    margin: 0;
+    background-size: contain;
+    background-position: 500px; /* Posiciona a imagem no canto superior esquerdo */
+}
+
+header {
+    background-color: #333;
+    height: 85px;
+    width: 100%;
+    border-bottom: 3.2px solid green;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu li a:hover {
+    color: green;
+}
+
+
+
+/*  --------------- footer ---------------*/
+
+footer {
+
+    position: relative; /* aquiii */
+    display: flex;
+    align-self: flex-end;
+    flex-direction: row;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 9px 0;
+    font-size: 14px;
+    border-top: 3.2px solid green;
+
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+  }
+
+  .footer-links li {
+    display: inline-block;
+    margin-right: 90px;
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-social a {
+    margin-right: 10px;
+  }
+
+  .footer-social img {
+    height: 20px;
+  }
+
+.card_tecnologia {
+    margin-left: 5vh;
+    margin-right: 5vh;
+    height: 15px;
+    /* background-color: purple; */
+
+}
+
+.row {
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 6vh;
+    margin-bottom: 5vh;
+}
+
