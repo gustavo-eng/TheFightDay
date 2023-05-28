@@ -43,8 +43,8 @@ router.get('/tecnologia', async (req, res) => {
 
 })
 
-router.get('/desenvolvedor', (req, res) => {
-    res.render('desenvolvedor')
+router.get('desenvolvedor', (req, res) => {
+  res.send('Essa tela esta em desenvolvimento ')
 })
 
 
