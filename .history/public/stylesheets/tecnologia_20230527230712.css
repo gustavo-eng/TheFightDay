@@ -140,23 +140,8 @@ h2 {
 }
 
 /*  card das tecnologias  */
-.card {
-  background-color: #686868;
+.body-card {
+  background-color: #525252;
+  border-radius: 8px;
+
 }
-
-.card-body {
-  background-color: #4f4f4f;
-  border: 1.8px solid green;
-}
-.card-title {
-  color: rgb(243, 243, 243);
-  font-weight: 600;
-}
-
-.card-text {
-  color: rgb(239, 239, 239);
-  font-weight: 600;
-}
-
-
-

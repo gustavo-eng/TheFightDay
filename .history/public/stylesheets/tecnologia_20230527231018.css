@@ -140,23 +140,17 @@ h2 {
 }
 
 /*  card das tecnologias  */
-.card {
-  background-color: #686868;
+.framework{
+  background-color: #525252;
+  border-radius: 8px;
 }
 
-.card-body {
-  background-color: #4f4f4f;
-  border: 1.8px solid green;
-}
-.card-title {
-  color: rgb(243, 243, 243);
-  font-weight: 600;
+.description {
+  color: #b1b1b1;
 }
 
-.card-text {
-  color: rgb(239, 239, 239);
-  font-weight: 600;
-}
 
+<h5 class="card-title framework">{{name}}</h5>
+<p class="card-text description">{{description}}</p>
 
 
