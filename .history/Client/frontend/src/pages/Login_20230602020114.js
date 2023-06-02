@@ -28,7 +28,6 @@ const LoginScreen  = (props) => {
       const token = response.token
       localStorage.setItem('token', token);
 
-      navigate('/home')
 
     }
 

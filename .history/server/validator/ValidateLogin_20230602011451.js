@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const  joi = require('joi')
 
 const taskSchema = Joi.object({
 
@@ -34,5 +35,3 @@ module.exports = {
     }
 
 }
-
-

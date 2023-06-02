@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
         const token = jwt.sign({user: user} , 'A1B2C3', {expiresIn: "1hr"})
         res.json({status: true, token: token, user: user})
         console.log('redirect-----')
-        // res.redirect('http://localhost:3000/home')
+        res.redirect('http://localhost:3000/home')
     } else  {
         res.status(403).json({status: false, msg: 'Unauthorized user'})
     }
@@ -33,10 +33,8 @@ router.post('/', (req, res) => {
 
 //Cadastrar um novo usuario
 /*
-router.post('/signIn')
-
+router.post('signIn')
 */
-
 
 
 

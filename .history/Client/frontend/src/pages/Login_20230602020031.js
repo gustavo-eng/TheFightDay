@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import taskService from '../service/taskService';
 
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const LoginScreen  = (props) => {
@@ -28,7 +28,7 @@ const LoginScreen  = (props) => {
       const token = response.token
       localStorage.setItem('token', token);
 
-      navigate('/home')
+      <Navigate to={"/home"} />
 
     }
 

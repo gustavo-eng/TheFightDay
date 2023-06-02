@@ -3,7 +3,6 @@ import taskService from '../service/taskService';
 
 import { useNavigate } from 'react-router-dom';
 
-
 const LoginScreen  = (props) => {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
@@ -26,9 +25,8 @@ const LoginScreen  = (props) => {
       console.log(response)
 
       const token = response.token
-      localStorage.setItem('token', token);
 
-      navigate('/home')
+
 
     }
 

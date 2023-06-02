@@ -19,16 +19,13 @@ const LoginScreen  = (props) => {
     };
 
     const handleSubmit = async (e) => {
-      e.preventDefault();
-      console.log('Clicou no Entrar')
+        e.preventDefault();
       const response = await taskService.login(user, password)
       console.log(' Response dentro do handleSubmit')
       console.log(response)
 
       const token = response.token
-      localStorage.setItem('token', token);
-
-      navigate('/home')
+      localStorage.setItem('token', token)
 
     }
 

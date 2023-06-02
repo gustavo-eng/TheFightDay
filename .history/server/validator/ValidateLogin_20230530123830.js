@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const  joi = require('joi')
 
 const taskSchema = Joi.object({
 
@@ -30,9 +31,6 @@ module.exports = {
         console.log('Campos de login invalidos')
         req.body = value
         return next()
-
     }
 
 }
-
-

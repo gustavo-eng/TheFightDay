@@ -7,7 +7,9 @@ const Home = () => {
         const clearToken = () => {
           localStorage.removeItem('token'); // Remover o token após 4 segundos
         };
+
         const timeoutId = setTimeout(clearToken, 6000);
+
         // Limpar o timeout quando o componente for desmontado
         return () => clearTimeout(timeoutId);
     }, []);
