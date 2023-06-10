@@ -1,0 +1,6 @@
+body {
+    background-color: rgb(13, 12, 12);
+    margin: 0;
+
+    background-position: 500px; /* Posiciona a imagem no canto superior esquerdo */
+}
