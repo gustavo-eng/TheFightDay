@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 // console.log('v4 --> ')
 // console.log(v4())
 const userSchema = new mongoose.Schema({
-    id: mongoose.Schema.Types.UUID,
+    // id: mongoose.Schema.Types.UUID,
     nome: String,
     email: String,
     senha: String,
@@ -39,22 +39,23 @@ const CRUD = {
     },
     update: async (id, email, nome, password, permission) => {
         let user = await UserModel.findByIdAndUpdate(id,
-            {email: email, nome: nome, password: password, permission: permission}
+            {email: email, nome: nome, senha: password, permissoes: permission}
         ).then(user => {
             return user
         }).catch(err => {
             console.log('Erro ao alterar user ')
+            return
         })
 
         return user
     },
 
     delete: async (id) => {
-        return await EsportModel.findByIdAndDelete(id)
+        return await UserModel.findByIdAndDelete(id)
     },
 
     getById: async (id) => {
-        return await EsportModel.findById(id).lean()
+        return await UserModel.findById(id).lean()
     }
 
 }

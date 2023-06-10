@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
 // buscando os dados no banco
 router.put("/:id", (req, res) => {
   const {email, name, password, permission} = req.body
-  const {id} = req.params.id
+  const  id  = req.params.id
 
   UserDAO.update(id, email, name, password, permission).then(user => {
        res.status(201).json(user)
@@ -38,6 +38,20 @@ router.put("/:id", (req, res) => {
   }).catch(err => {
     res.status(400).send('Erro ao atualizar o User.')
   })
+})
+
+
+router.delete("/:id", (req, res) => {
+  const id = req.params.id
+
+  UserDAO.delete(id)
+  .then(user => {
+    res.status(200).json(user)
+  }).catch(err => {
+    console.log(err)
+    res.status(400).send('Erro ao deletar o User.')
+  })
+
 })
 
 module.exports = router;
