@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
 });
 
 // save: async (email, name, password, permission)
-//MIDDLEWARE
 router.post("/", (req, res) => { // aplicar regra de negocio aqui para analisar quantidade de users com permission admin
   const {email, name, password, permission} = req.body
 

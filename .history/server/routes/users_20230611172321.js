@@ -3,8 +3,6 @@ var router = express.Router();
 
 const UserDAO = require('../model/Users')
 
-//APLICACAO DE MIDDLEWARES
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     // res.send('Esta dentro de users ')
@@ -16,8 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 // save: async (email, name, password, permission)
-//MIDDLEWARE
-router.post("/", (req, res) => { // aplicar regra de negocio aqui para analisar quantidade de users com permission admin
+router.post("/", (req, res) => { // aplicar regra de negocio aqui
   const {email, name, password, permission} = req.body
 
   UserDAO.save(email, name, password, permission).then(user => {
@@ -31,7 +28,6 @@ router.post("/", (req, res) => { // aplicar regra de negocio aqui para analisar 
 
 // colocar para atualizar os dados no front por padrao
 // buscando os dados no banco
-//MIDDLEWARE
 router.put("/:id", (req, res) => {
   const {email, name, password, permission} = req.body
   const  id  = req.params.id
@@ -44,7 +40,7 @@ router.put("/:id", (req, res) => {
   })
 })
 
-//MIDDLEWARE
+
 router.delete("/:id", (req, res) => {
   const id = req.params.id
 
