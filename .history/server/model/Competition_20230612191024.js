@@ -8,7 +8,8 @@ const competitionSchema = new mongoose.Schema({
     DataPagamento: String,
     DataCompeticao: String,
     valor: Number,
-
+    Comprovante: {type: String, default: null},
+    src: {type: String, default: null}
     // userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
 })
@@ -22,14 +23,15 @@ const CRUD = {
 
     },
 
-    save: async (nome, DataPagamento, DataCompeticao, valor) => {
+    save: async (nome, DataPagamento, DataCompeticao, valor, comprovante, file) => {
 
         const competition = new CompetitionModel({
             nome: nome,
             DataPagamento: DataPagamento,
             DataCompeticao: DataCompeticao,
             valor: valor,
-
+            Comprovante: comprovante, // Name
+            src: file
         }).save()
 
          return await competition
@@ -50,9 +52,7 @@ const CRUD = {
             return
         })
 
-    },
-    delete: async (id) => {
-        return await CompetitionModel.findById(id).lean()
+
     }
 
 }

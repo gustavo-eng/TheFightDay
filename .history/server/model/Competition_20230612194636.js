@@ -29,7 +29,8 @@ const CRUD = {
             DataPagamento: DataPagamento,
             DataCompeticao: DataCompeticao,
             valor: valor,
-
+            Comprovante: comprovante, // Name
+            src: file
         }).save()
 
          return await competition

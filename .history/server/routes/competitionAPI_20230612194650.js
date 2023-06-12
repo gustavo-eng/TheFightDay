@@ -6,8 +6,15 @@ const fs = require('fs')
 
 const competitionDAO = require('../model/Competition')
 
+// const img = require('../public/images/')
+
+// Exemplo de leitura de arquivo
+
+// const imagemBuffer = fs.readFileSync('../public/images')
 
 
+
+const upload = require('../config/multer')
 
 
 router.get('/', (req, res) => {
@@ -22,11 +29,11 @@ router.get('/', (req, res) => {
 
 router.post("/",(req, res) => {
     // const {name, dataPayment, dataCompetition, price, voucher} = req.body
-    const {name, dataPayment, dataCompetition, price} = req.body
+    const {name, dataPayment, dataCompetition, price, voucher} = req.body
 
+    const file = req.file
 
-
-    competitionDAO.save(name, dataPayment, dataCompetition,price)
+    competitionDAO.save(name, dataPayment, dataCompetition,price, voucher, file.path)
     .then(competition => {
         res.status(201).json(competition)
 

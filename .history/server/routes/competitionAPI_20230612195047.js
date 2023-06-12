@@ -9,6 +9,8 @@ const competitionDAO = require('../model/Competition')
 
 
 
+const upload = require('../config/multer')
+
 
 router.get('/', (req, res) => {
     //res.status(200).json({msg : "Rota de competicao"})

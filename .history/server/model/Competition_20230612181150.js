@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const path = require('path')
+
 
 //TERMINAR
 const competitionSchema = new mongoose.Schema({
@@ -8,7 +8,8 @@ const competitionSchema = new mongoose.Schema({
     DataPagamento: String,
     DataCompeticao: String,
     valor: Number,
-
+    Comprovante: {type: String, default: null},
+    src: {type: String, default: null}
     // userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
 })
@@ -19,42 +20,21 @@ const CRUD = {
     list: async () => {
         const competition = await CompetitionModel.find({}).lean()
         return  competition
-
     },
 
-    save: async (nome, DataPagamento, DataCompeticao, valor) => {
-
+    save: async (nome, DataPagamento, DataCompeticao, valor, comprovante, file) => {
+comprovante
         const competition = new CompetitionModel({
             nome: nome,
             DataPagamento: DataPagamento,
             DataCompeticao: DataCompeticao,
             valor: valor,
-
+            Comprovante: comprovante, // Name
+            src: file.path
         }).save()
 
          return await competition
-    },
-    getById: async (id) => {
-        return await CompetitionModel.findById(id).lean()
-    },
-    update: async (id, nome, DataPagamento, DataCompeticao, valor) => {
-        let competition = await CompetitionModel.findByIdAndUpdate(id,
-            {nome: nome,DataPagamento: DataPagamento ,DataCompeticao: DataCompeticao,
-            valor: valor}
-
-        ).then(competition => {
-            return competition
-
-        }).catch(err => {
-            console.log('erro ao alterar competicao')
-            return
-        })
-
-    },
-    delete: async (id) => {
-        return await CompetitionModel.findById(id).lean()
     }
-
 }
 
 module.exports = CRUD;

@@ -18,16 +18,11 @@ const UserModel = mongoose.model('User', userSchema);
 
 const CRUD = {
     list: async () => {
-        try {
-            const user = await UserModel.find({}).lean()
-            console.log('Imprimindo user list:async ID')
-            console.log(user[0]._id.toString()) // somente a string
-            console.log(user[0]._id) // ObjectId
-            return user
-
-        } catch (error) {
-            return `Erro ao listar. Erro --> ${error}`
-        }
+        const user = await UserModel.find({}).lean()
+        console.log('Imprimindo user list:async ID')
+        console.log(user[0]._id.toString()) // somente a string
+        console.log(user[0]._id) // ObjectId
+        return user
     },
     save: async (email, name, password, permission) => {
         const user = new UserModel({
