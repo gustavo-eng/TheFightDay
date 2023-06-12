@@ -8,7 +8,7 @@ const competitionSchema = new mongoose.Schema({
     DataPagamento: String,
     DataCompeticao: String,
     valor: Number,
-    Comprovante: {type: Buffer, default: null},
+    Comprovante: {type: Buffer},
     // userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
 })

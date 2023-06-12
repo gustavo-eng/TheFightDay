@@ -38,7 +38,7 @@ app.use(require('./helpers/mongo'))
 app.use('/', loginRouter); // rota de login localhost:3333/
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
-app.use('/competition', competitionRouter)
+
 
 
 // catch 404 and forward to error handler

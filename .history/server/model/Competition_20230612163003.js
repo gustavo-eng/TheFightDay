@@ -8,7 +8,7 @@ const competitionSchema = new mongoose.Schema({
     DataPagamento: String,
     DataCompeticao: String,
     valor: Number,
-    Comprovante: {type: Buffer, default: null},
+    // Comprovante: {type: Buffer},
     // userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 
 })
@@ -21,13 +21,12 @@ const CRUD = {
         return  competition
     },
 
-    save: async (nome, DataPagamento, DataCompeticao, valor, comprovante) => {
+    save: async (nome, DataPagamento, DataCompeticao, valor) => {
         const competition = new CompetitionModel({
             nome: nome,
             DataPagamento: DataPagamento,
             DataCompeticao: DataCompeticao,
-            valor: valor,
-            Comprovante: comprovante,
+            valor: valor
         })
 
         await competition.save()
