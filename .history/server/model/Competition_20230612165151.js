@@ -22,15 +22,14 @@ const CRUD = {
     },
 
     save: async (nome, DataPagamento, DataCompeticao, valor, comprovante) => {
-        const competition = new CompetitionModel({
+        const competition = await new CompetitionModel({
             nome: nome,
             DataPagamento: DataPagamento,
             DataCompeticao: DataCompeticao,
             valor: valor,
             Comprovante: comprovante,
         }).save()
-
-         return await competition
+        return competition
     }
 }
 

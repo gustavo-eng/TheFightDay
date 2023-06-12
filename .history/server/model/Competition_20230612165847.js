@@ -30,7 +30,7 @@ const CRUD = {
             Comprovante: comprovante,
         }).save()
 
-         return await competition
+        return await competition
     }
 }
 
