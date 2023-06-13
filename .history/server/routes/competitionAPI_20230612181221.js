@@ -32,9 +32,10 @@ router.post("/", upload.single('picture') ,(req, res) => {
     // const {name, dataPayment, dataCompetition, price, voucher} = req.body
     const {name, dataPayment, dataCompetition, price, voucher} = req.body
 
-    const file = req.file
-
-    competitionDAO.save(name, dataPayment, dataCompetition,price, voucher, file)
+    const {picture }= req.files
+    console.log('______________________________')
+    console.log(picture)
+    competitionDAO.save(name, dataPayment, dataCompetition,price, voucher)
     .then(competition => {
         res.status(201).json(competition)
 
