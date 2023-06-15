@@ -5,6 +5,7 @@ const paymentDAO = require('../model/Payment')
 const competitionDAO = require('../model/Competition')
 const controllAcces = require('../middleware/controlaAcesso');
 
+
 // Lista todos os pagamentos
 router.get('/',  controllAcces.accessControl, controllAcces.permissioAdminControll,  (req, res) => {
     paymentDAO.list()
@@ -55,54 +56,39 @@ router.post('/', controllAcces.accessControl, async (req, res) => {
 
 
 //MELHORAR
-router.delete("/:id",controllAcces.accessControl, controllAcces.permissioAdminControll, async (req, res) => {
+router.delete("/:id",controllAcces.accessControl, async (req, res) => {
+    //colocar o || para req.id  e ou req.permission
     const {id} = req.params
     const payment = await paymentDAO.getById(id)
 
-    paymentDAO.delete(id).then(() => {
-        res.status(200).json({msg: "Esse pagamento sera deletado",payment})
-    }).catch(err => {
-        res.status(200).json({msg: "Erro ao deletar pagamento"})
-    })
+
+
+    res.status(200).json({msg: "Esse pagamento sera deletado",payment})
+
+
+
+
 })
-///busca/:id/:idPayment
-router.put("/update/:id/:idPayment", controllAcces.accessControl ,async (req, res) => {
-    const { email, name, nameCompetition, categoryWeight, categoryYear, picture } = req.body
-    const idPayment = req.params.idPayment
-    const {id} = req.params
-    if(req.id == id || req.userPermission.includes('sensei')) {
-        paymentDAO.getPaymentByUserId(req.id).then((payment) => {
-            if(payment.length < 1) {
-                res.status(404).json({msg: "Usuario nao possui pagamentos "})
-            }else {
-                paymentDAO.updatePaymentByUserId(idPayment, id,  email, name, nameCompetition, categoryWeight, categoryYear, picture)
-                .then(result => {
-                    res.status(200).json(result)
-                }).catch(err => {res.status(500).json({msg: "Erro ao alterar user ** "})})
-            }
-        }).catch(err => {
-            res.status(404).json({msg: "Usuario nao possui pagamentos "})
-        })
-    }
-})
+// deletar todos pagamentos do sistema
+// router.delete('/todos', async () => {
 
-// talvez essa nem precise ser USADA
-router.get("/busca/:id", controllAcces.accessControl ,async (req, res) => {
-    const { id } =  req.params
-    if(req.id == req.params.id || req.userPermission.includes('sensei')) {
-        UserDAO.getById(id).then(user => {
-            console.log('Dentro de /busca/:id ')
-            console.log(user)
-            res.status(200).json(user.payments)
-
-        }).catch(err => {
-            res.status(200).json({msg: "Erro ao obter usuario "})
-            console.log(err)
-        })
-    }
-})
+// })
 
 
+// const {id} = req.params
+// paymentDAO.delete(id).then(() => {
+//     const payment =  paymentDAO.getById(id).then(() => {
+//         res.status(200).json({payment , msg: "Payment deleted successfully"})
+//     }).catch(() => {
+//         res.status(404).json({msg: "Payment not found "})
+//     })
+// }).catch(() => {3
+//     res.status(503).json({msg: "Erro ao deletar"})
+// })
+
+
+//FALTA O DELETE !!
+//https://www.base64decode.org/
 
 module.exports = router
 

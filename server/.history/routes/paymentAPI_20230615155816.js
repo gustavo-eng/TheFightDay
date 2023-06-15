@@ -65,6 +65,7 @@ router.delete("/:id",controllAcces.accessControl, controllAcces.permissioAdminCo
         res.status(200).json({msg: "Erro ao deletar pagamento"})
     })
 })
+
 ///busca/:id/:idPayment
 router.put("/update/:id/:idPayment", controllAcces.accessControl ,async (req, res) => {
     const { email, name, nameCompetition, categoryWeight, categoryYear, picture } = req.body
@@ -86,6 +87,7 @@ router.put("/update/:id/:idPayment", controllAcces.accessControl ,async (req, re
     }
 })
 
+
 // talvez essa nem precise ser USADA
 router.get("/busca/:id", controllAcces.accessControl ,async (req, res) => {
     const { id } =  req.params
@@ -99,10 +101,31 @@ router.get("/busca/:id", controllAcces.accessControl ,async (req, res) => {
             res.status(200).json({msg: "Erro ao obter usuario "})
             console.log(err)
         })
+
     }
+
 })
 
+// deletar todos pagamentos do sistema
+// router.delete('/todos', async () => {
 
+// })
+
+
+// const {id} = req.params
+// paymentDAO.delete(id).then(() => {
+//     const payment =  paymentDAO.getById(id).then(() => {
+//         res.status(200).json({payment , msg: "Payment deleted successfully"})
+//     }).catch(() => {
+//         res.status(404).json({msg: "Payment not found "})
+//     })
+// }).catch(() => {3
+//     res.status(503).json({msg: "Erro ao deletar"})
+// })
+
+
+//FALTA O DELETE !!
+//https://www.base64decode.org/
 
 module.exports = router
 

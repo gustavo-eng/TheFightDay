@@ -101,11 +101,12 @@ module.exports = {
                 {new : true}
             ).where({ usuario: userId });
 
-            return payment
+
         } catch (error) {
-            res.status(500).json({msg: "Erro ao atualizar payment"})
+
         }
     }
+
 
 }
 

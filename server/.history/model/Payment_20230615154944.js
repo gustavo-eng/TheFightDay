@@ -97,15 +97,17 @@ module.exports = {
                     categoriaPeso: categoriaPeso,
                     categoriaIdade: categoriaIdade,
                     comprovante: comprovante,
+                    usuario: userId
                 },
                 {new : true}
-            ).where({ usuario: userId });
+            )
 
-            return payment
+
         } catch (error) {
-            res.status(500).json({msg: "Erro ao atualizar payment"})
+
         }
     }
+
 
 }
 

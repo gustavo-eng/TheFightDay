@@ -103,9 +103,10 @@ module.exports = {
 
             return payment
         } catch (error) {
-            res.status(500).json({msg: "Erro ao atualizar payment"})
+
         }
     }
+
 
 }
 

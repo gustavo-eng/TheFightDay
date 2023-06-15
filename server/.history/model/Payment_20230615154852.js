@@ -90,22 +90,15 @@ module.exports = {
     updatePaymentByUserId: async (paymentId, userId,email, nome, nomeCompeticao, categoriaPeso, categoriaIdade, comprovante) => {
         try {
             const payment = await paymentModel.findByIdAndUpdate(paymentId,
-                {
-                    email: email,
-                    nome: nome,
-                    nomeCompeticao: nomeCompeticao,
-                    categoriaPeso: categoriaPeso,
-                    categoriaIdade: categoriaIdade,
-                    comprovante: comprovante,
-                },
-                {new : true}
-            ).where({ usuario: userId });
+                {}
+            )
 
-            return payment
+
         } catch (error) {
-            res.status(500).json({msg: "Erro ao atualizar payment"})
+
         }
     }
+
 
 }
 
