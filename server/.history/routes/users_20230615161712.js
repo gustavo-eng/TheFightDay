@@ -30,7 +30,6 @@ router.get('/', controllAcces.accessControl, controllAcces.permissioAdminControl
 
 // save: async (email, name, password, permission)
 //MIDDLEWARE
-//mudar este post para que somente admins registre admins
 router.post("/", (req, res) => { // aplicar regra de negocio aqui para analisar quantidade de users com permission admin
 
   const idPayment = req.query.payment

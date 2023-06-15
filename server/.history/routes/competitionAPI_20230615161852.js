@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 var path = require('path');
+
 const fs = require('fs');
 
 //MidleWare
@@ -50,19 +51,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.delete("/:id", controllAcces.accessControl, controllAcces.permissioAdminControll ,(req, res) => {
-    const { id } = req.params
-    competitionDAO.delete(id).then((comp) => {
-        res.status(200).json({msg: "Competicao deletada com suceso", comp})
-    }).catch((err) => {
-        res.status(500).json({msg: "Erro ao deletar competicao"})
-    })
+
 })
-
-// router.put("/", (req, res) => {
-
-// })
-
-
 
 module.exports = router;
 

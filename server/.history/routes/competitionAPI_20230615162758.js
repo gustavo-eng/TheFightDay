@@ -63,7 +63,6 @@ router.delete("/:id", controllAcces.accessControl, controllAcces.permissioAdminC
 // })
 
 
-
 module.exports = router;
 
 

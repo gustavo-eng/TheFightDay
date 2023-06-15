@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 var path = require('path');
+
 const fs = require('fs');
 
 //MidleWare
@@ -57,11 +58,6 @@ router.delete("/:id", controllAcces.accessControl, controllAcces.permissioAdminC
         res.status(500).json({msg: "Erro ao deletar competicao"})
     })
 })
-
-// router.put("/", (req, res) => {
-
-// })
-
 
 
 module.exports = router;

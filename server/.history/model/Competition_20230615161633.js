@@ -53,6 +53,7 @@ const CRUD = {
     },
     delete: async (id) => {
         return await CompetitionModel.findByIdAndDelete(id).lean()
+        //return await CompetitionModel.findById(id).lean()
     }
 
 }
