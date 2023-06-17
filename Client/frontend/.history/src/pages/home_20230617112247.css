@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(219, 218, 218);
+    margin: 0;
+    background-image: none;
+    /* background-size: contain; */
+    background-position: 500px; /* Posiciona a imagem no canto superior esquerdo */
+}
+
+
+#permissionSelect {
+    display: flex;
+    margin-left: 8vh;
+    background-color: red;
+    margin-bottom: 4vh;
+    width: 15vh;
+}
