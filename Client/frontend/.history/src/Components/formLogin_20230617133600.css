@@ -239,13 +239,13 @@ body {
     align-content: flex-end;
   }
 
-  #permissionSelect2 {
-    display: flex;
-    margin-left: 8.35vh;
-    background-color: rgb(135, 135, 135);
-    margin-bottom: 8vh;
-    color: white;
-    border-radius: 5px;
-    height: 4vh;
-    width: 15vh;
-}
+  #permissionSelect {
+    /* background-color: rgb(150, 149, 150);
+    font-weight: bold;
+    width: 38vh;
+    text-align: center;
+    height: 6vh;
+    margin-left: 0px;
+    border: 1.5px solid green;
+    outline: none; */
+  }

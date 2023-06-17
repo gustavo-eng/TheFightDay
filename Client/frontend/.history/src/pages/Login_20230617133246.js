@@ -50,7 +50,7 @@ const LoginScreen  = (props) => {
       localStorage.setItem('token', token);
       localStorage.setItem('userId', response.userId)
       localStorage.setItem('user', response.user)
-      localStorage.setItem('permission', response.userPermission)
+
       navigate('/home')
 
     }
@@ -117,7 +117,7 @@ const LoginScreen  = (props) => {
                                             onChange={handleEmailChange}
                                             required
                                         />
-                                        <select id="permissionSelect2" value={selectedPermission} onChange={handlePermissionChange} >
+                                        <select id="permissionSelect" value={selectedPermission} onChange={handlePermissionChange} >
                                             <option value="aluno">Escolha</option>
                                             <option value="aluno">Aluno</option>
                                             <option value="sensei">Sensei</option>

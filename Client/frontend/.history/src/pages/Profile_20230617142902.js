@@ -38,15 +38,6 @@ const Profile = (props) => {
         console.log(response)
     }
 
-    const handleDeleteUser = async () => {
-        // if(!window.confirm(`Deseja realmente excluir o usuario ${username}?`)){
-
-        // }
-
-
-
-    }
-
     return (
         <>
              <div className="container_contato">
@@ -93,7 +84,7 @@ const Profile = (props) => {
                         <option value="sensei">Sensei</option>
                     </select>
                     <button onClick={handleUpdateUser} className="submit-btn">Atualizar</button>
-                    <button type="submit" className="submit-btn del ">Deletar usuário</button>
+                    <button type="submit" className="submit-btn del ">Deletar</button>
                 </form>
                 <div id="success-message" className="success-message"></div>
                 <div id="error-message" className="error-message"></div>

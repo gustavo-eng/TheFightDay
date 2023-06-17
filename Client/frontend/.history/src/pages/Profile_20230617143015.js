@@ -43,8 +43,6 @@ const Profile = (props) => {
 
         // }
 
-
-
     }
 
     return (

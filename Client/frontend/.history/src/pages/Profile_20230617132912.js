@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import taskService from '../service/taskServiceUser';
+import taskService from '../service/taskService';
 import './profile.css';
 
 const Profile = (props) => {
     console.log(taskService)
-    const [user, setUser] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [selectedPermission, setSelectedPermission] = useState('');
-
     const username = localStorage.getItem('user')
     const userId = localStorage.getItem('userId')
-    const token = localStorage.getItem('token')
+    const [user, setUser] = useState('');
+    const [email, setEmail] = useState('');
+    const [selectedPermission, setSelectedPermission] = useState('');
 
     const handlePermissionChange = (event) => {
         setSelectedPermission(event.target.value);
@@ -29,28 +26,10 @@ const Profile = (props) => {
         setEmail(e.target.value)
     }
 
-    //updateUser: async (id, token, email, user, password,permission)
-    const handleUpdateUser  = async (evt) => {
-        evt.preventDefault()
-        const response = taskService.updateUser(userId, token, email, user, password, selectedPermission)
-        alert("Usuário atualizado com sucesso!")
-        console.log('usuario alterado')
-        console.log(response)
-    }
-
-    const handleDeleteUser = async () => {
-        // if(!window.confirm(`Deseja realmente excluir o usuario ${username}?`)){
-
-        // }
-
-
-
-    }
-
     return (
         <>
              <div className="container_contato">
-                <h2>  Usuário : {username}  </h2>
+                <h2>   {username}  </h2>
                 <form id="contact-form"  >
                     <div className="form-group">
                         <label for="name">Nome:</label>
@@ -58,7 +37,6 @@ const Profile = (props) => {
                             type="text"
                             id="name"
                             name="user"
-                            placeholder={username ? username : "Novo usuário..."}
                             onChange={handleUserChange}
                             required
                         />
@@ -70,30 +48,21 @@ const Profile = (props) => {
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Email..."
-                            onChange={handleEmailChange}
+                            onChange={}
                             required
                         />
                     </div>
                     <div className="form-group">
                         <label for="subject">Senha:</label>
-                        <input
-                            type="password"
-                            id="subject"
-                            name="password"
-                            placeholder="Nova senha... "
-                            onChange={handlePasswordChange}
-                            required
-                        />
+                        <input type="password" id="subject" name="password" required />
                     </div>
-                    <h4>Permissão:</h4>
                     <select id="permissionSelect" value={selectedPermission} onChange={handlePermissionChange} >
                         <option value="aluno">Escolha</option>
                         <option value="aluno">Aluno</option>
                         <option value="sensei">Sensei</option>
                     </select>
-                    <button onClick={handleUpdateUser} className="submit-btn">Atualizar</button>
-                    <button type="submit" className="submit-btn del ">Deletar usuário</button>
+                    <button type="submit" className="submit-btn">Atualizar</button>
+                    <button type="submit" className="submit-btn del ">Deletar</button>
                 </form>
                 <div id="success-message" className="success-message"></div>
                 <div id="error-message" className="error-message"></div>

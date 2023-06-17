@@ -239,13 +239,3 @@ body {
     align-content: flex-end;
   }
 
-  #permissionSelect2 {
-    display: flex;
-    margin-left: 8.35vh;
-    background-color: rgb(135, 135, 135);
-    margin-bottom: 8vh;
-    color: white;
-    border-radius: 5px;
-    height: 4vh;
-    width: 15vh;
-}

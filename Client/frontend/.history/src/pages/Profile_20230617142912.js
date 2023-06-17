@@ -38,15 +38,6 @@ const Profile = (props) => {
         console.log(response)
     }
 
-    const handleDeleteUser = async () => {
-        // if(!window.confirm(`Deseja realmente excluir o usuario ${username}?`)){
-
-        // }
-
-
-
-    }
-
     return (
         <>
              <div className="container_contato">

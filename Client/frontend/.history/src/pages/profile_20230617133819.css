@@ -63,11 +63,10 @@
   #permissionSelect {
     background-color: rgb(150, 149, 150);
     font-weight: bold;
-    width: 25vh;
+    width: 32vh;
     text-align: center;
-    height: 5vh;
+    height: 6vh;
     margin-left: 0px;
-    margin-top: -3vh;
     border: 1.5px solid green;
     outline: none;
   }

@@ -11,7 +11,6 @@ const Profile = (props) => {
 
     const username = localStorage.getItem('user')
     const userId = localStorage.getItem('userId')
-    const token = localStorage.getItem('token')
 
     const handlePermissionChange = (event) => {
         setSelectedPermission(event.target.value);
@@ -29,28 +28,15 @@ const Profile = (props) => {
         setEmail(e.target.value)
     }
 
-    //updateUser: async (id, token, email, user, password,permission)
-    const handleUpdateUser  = async (evt) => {
-        evt.preventDefault()
-        const response = taskService.updateUser(userId, token, email, user, password, selectedPermission)
-        alert("Usuário atualizado com sucesso!")
-        console.log('usuario alterado')
-        console.log(response)
-    }
 
-    const handleDeleteUser = async () => {
-        // if(!window.confirm(`Deseja realmente excluir o usuario ${username}?`)){
-
-        // }
-
-
+    const handleUpdateUser  = async () => {
 
     }
 
     return (
         <>
              <div className="container_contato">
-                <h2>  Usuário : {username}  </h2>
+                <h2>   {username}  </h2>
                 <form id="contact-form"  >
                     <div className="form-group">
                         <label for="name">Nome:</label>
@@ -58,7 +44,7 @@ const Profile = (props) => {
                             type="text"
                             id="name"
                             name="user"
-                            placeholder={username ? username : "Novo usuário..."}
+                            placeholder="Novo usuário..."
                             onChange={handleUserChange}
                             required
                         />
@@ -93,7 +79,7 @@ const Profile = (props) => {
                         <option value="sensei">Sensei</option>
                     </select>
                     <button onClick={handleUpdateUser} className="submit-btn">Atualizar</button>
-                    <button type="submit" className="submit-btn del ">Deletar usuário</button>
+                    <button type="submit" className="submit-btn del ">Deletar</button>
                 </form>
                 <div id="success-message" className="success-message"></div>
                 <div id="error-message" className="error-message"></div>
