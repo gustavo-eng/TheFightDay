@@ -252,8 +252,8 @@ const Home = () => {
                             )}
 
                         {cardsData[index].showForm && (
-                            <div className="formPayment">
-                                <h3>Formulário de Pagamento</h3>
+                            <>
+                                <h3>Formulário de Pagamento!!</h3>
 
                                 <form>
                                     <input
@@ -297,9 +297,9 @@ const Home = () => {
                                         required
                                     />
                                 </form>
-                                <button className="btn-form-payment" onClick={(e) => handlePayment(e, index)}>Pagar!</button>
+                                <button onClick={(e) => handlePayment(e, index)}>Pagar2!</button>
                                 <button onClick={() => cancelPayment(index)}>Cancelar Pagamento</button>
-                            </div>
+                            </>
                         )}
                     </div>
                 </div>

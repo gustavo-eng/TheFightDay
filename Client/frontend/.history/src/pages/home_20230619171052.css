@@ -102,35 +102,9 @@ body {
 
 
 .formPayment  input {
-    background-color: rgb(237, 232, 237);
-    display: flex;
-    border-radius: 5px;
-    margin-bottom: 6px;
-    margin-left: 2vh;
-    outline: none;
-    height: 22px;
-    width: 28vh;
-    border:  1px solid rgb(105, 104, 104);
-
+    background-color: rgb(116, 109, 116);
 }
 
-
-.btn-form-payment {
-    background-color: rgb(7, 144, 10);
-    width: 15vh;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    color: white;
-    height: 3vh;
-    align-self: flex-end;
-    margin-right: 2vh;
-    margin-top: 3vh;
-    margin-bottom: 2.7vh;
-    cursor: pointer;
-
-}
 
 /*
 .allCards {

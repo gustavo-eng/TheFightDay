@@ -195,7 +195,7 @@ const Home = () => {
             {competitions.map((comp, index) => (
                 <div className="allCards">
                     <div key={comp._id} className="cardCompetition">
-                        <div className="cardAtributes">
+                        <div>
                             <h2>{comp.nome}</h2>
                             <h4>Data do pagamento: {comp.DataPagamento}</h4>
                             <h4>Data da Competição: {comp.DataCompeticao}</h4>
@@ -252,7 +252,7 @@ const Home = () => {
                             )}
 
                         {cardsData[index].showForm && (
-                            <div className="formPayment">
+                            <>
                                 <h3>Formulário de Pagamento</h3>
 
                                 <form>
@@ -297,9 +297,9 @@ const Home = () => {
                                         required
                                     />
                                 </form>
-                                <button className="btn-form-payment" onClick={(e) => handlePayment(e, index)}>Pagar!</button>
+                                <button onClick={(e) => handlePayment(e, index)}>Pagar2!</button>
                                 <button onClick={() => cancelPayment(index)}>Cancelar Pagamento</button>
-                            </div>
+                            </>
                         )}
                     </div>
                 </div>
