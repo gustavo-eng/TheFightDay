@@ -1,0 +1,12 @@
+.containerPayment {
+    display: flex;
+    flex-direction: column;
+    width: 68vh;
+    align-self: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    border: 1px solid green;
+    border-radius:  3px;
+    background-color: yellow;
+    margin-left: 35%;
+}
