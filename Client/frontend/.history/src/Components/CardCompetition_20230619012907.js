@@ -1,20 +1,8 @@
 import React, { useState } from 'react';
-import controllServiceCompetition from '../service/taskServiceCompetition';
 
-/*
- const response = await controllServiceCompetition.updateCompetition(
-                idCompetition,
-                token,
-                newNome,
-                newDataPagemento,
-                newDataCompeticao,
-                newPrice
-            );
 
-*/
+
 const FormCardCompetition = (props) => {
-
-    const token = localStorage.getItem('token')
 
     const [newNome, setNewNome] = useState('');
     const [newDataPagemento, setNewDataPagemento] = useState('');
@@ -39,20 +27,6 @@ const FormCardCompetition = (props) => {
         };
 
     // ====================================
-        //saveCompetition: async (token, name, dataPayment, dataCompetition, price) => {
-    const saveCompetition =  async (e) => {
-        e.preventDefault()
-        try {
-            const response = await controllServiceCompetition.saveCompetition(token,newNome, newDataPagemento, newDataCompeticao, newPrice)
-            console.log('Nova competicao salva --> ')
-            console.log(response)
-        } catch (error) {
-            console.log('Ocorreu um erro ao salvar nova competicao. Erro --> ')
-            console.log(error)
-        }
-        window.location.reload()
-
-    }
 
     return (
         <>
@@ -89,7 +63,7 @@ const FormCardCompetition = (props) => {
                 onChange={handleNewPriceChange}
                 required
             />
-            <button className="btn-addComp" onClick={(e) => saveCompetition(e)}>Adicionar competição</button>
+            <button className="btn-addComp">Adicionar competição</button>
         </>
     )
 }

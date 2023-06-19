@@ -18,7 +18,7 @@ let controllServiceCompetition = {
 
         return response.json();
     },
-    saveCompetition: async (token, name, dataPayment, dataCompetition, price) => {
+    saveCompetition: async (token) => {
         const data = {
             method: 'POST',
             headers: {'Content-type': 'application/json', 'Custom-Header': token},
@@ -29,14 +29,6 @@ let controllServiceCompetition = {
                 price: price
             })
         }
-        const response = await fetch('http://localhost:3333/competition/', data)
-
-        if (!response.ok) {
-            throw new Error('2Erro ao atualizar a competição2222');
-        }
-
-        return response.json()
-
     },
 }
 

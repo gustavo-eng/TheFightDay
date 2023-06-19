@@ -47,11 +47,8 @@ const FormCardCompetition = (props) => {
             console.log('Nova competicao salva --> ')
             console.log(response)
         } catch (error) {
-            console.log('Ocorreu um erro ao salvar nova competicao. Erro --> ')
-            console.log(error)
-        }
-        window.location.reload()
 
+        }
     }
 
     return (
