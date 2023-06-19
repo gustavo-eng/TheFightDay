@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
-import FormCardCompetition from "../Components/CardCompetition";
 import controllServiceCompetition from "../service/taskServiceCompetition";
 import controllServicePayment from "../service/taskServicePayment";
+
+
 
 import './home.css';
 
 ReactModal.setAppElement('#root');
 
 const Home = () => {
-    // Modal
+
+    //Modal
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [openModalId, setOpenModalId] = useState(null);
-    // Estado dos cards e dados das competições
+    //Modal
+
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [competitions, setCompetitions] = useState([]);
     const [cardsData, setCardsData] = useState([]);
     const [selectedCompetitionId, setSelectedCompetitionId] = useState('');
 
-    const permission = localStorage.getItem('permission');
-    const token = localStorage.getItem('token');
+    const permission = localStorage.getItem('permission')
+    const token = localStorage.getItem('token')
     const [cardPayment, setCardPayment] = useState(false);
 
-    // Dados atualizados da competição
-    const [newNome, setNewNome] = useState('');
-    const [newDataPagemento, setNewDataPagemento] = useState('');
-    const [newDataCompeticao, setNewDataCompeticao] = useState('');
-    const [newPrice, setNewPrice] = useState('');
+    //=== update competition
+    const [newNome, setNewNome] = useState('')
+    const [newDataPagemento, setNewDataPagemento] = useState('')
+    const [newDataCompeticao, setNewDataCompeticao] = useState('')
+    const [newPrice, setNewPrice] = useState('')
+
+    //=== update competition
+
 
     useEffect(() => {
         fetch('http://localhost:3333/competition')
@@ -40,6 +45,7 @@ const Home = () => {
                     showForm: false,
                     nameCompetition: '',
                     categoryWeight: '',
+                    categoryYear: '',
                     picture: ''
                 }));
                 setCardsData(initialCardsData);
@@ -62,7 +68,7 @@ const Home = () => {
         e.preventDefault();
         const cardData = cardsData[index];
         const competition = cardData.competition;
-        const { nameCompetition, categoryWeight, picture } = cardData;
+        const { nameCompetition, categoryWeight, categoryYear, picture } = cardData;
 
         // Realiza o pagamento usando os dados do formulário
         const response = await controllServicePayment.savePayment(
@@ -72,7 +78,7 @@ const Home = () => {
             user,
             nameCompetition,
             categoryWeight,
-            newDataCompeticao,
+            categoryYear,
             picture
         );
         console.log(response);
@@ -129,40 +135,45 @@ const Home = () => {
             return updatedCardsData;
         });
         setSelectedCompetitionId(''); // Limpa o _id da competição selecionada
+
     };
 
-    // Funções para o modal
-    const openModal = (comp) => {
-        setOpenModalId(comp._id)
+
+    // ======= MODAL =======
+    function openModal() {
         setIsOpen(true);
-    };
+    }
 
-    const closeModal = () => {
-        setOpenModalId(null)
+    function closeModal() {
         setIsOpen(false);
-    };
+    }
+    // ======= MODAL =======
 
-    // Manipulação dos dados da competição para atualização
+
+    // ====  handle update competition ====
+
     const handleNewNomeChange = (e) => {
-        setNewNome(e.target.value);
-    };
+        setNewNome(e.target.value)
+    }
 
     const handleDataPagementoChange = (e) => {
-        setNewDataPagemento(e.target.value);
-    };
+        setNewDataPagemento(e.target.value)
+    }
 
     const handleDataCompeticaoChange = (e) => {
-        setNewDataCompeticao(e.target.value);
-    };
+        setNewDataCompeticao(e.target.value)
+    }
 
     const handleNewPriceChange = (e) => {
-        setNewPrice(e.target.value);
-    };
+        setNewPrice(e.target.value)
+    }
 
-    // Função para atualizar a competição
+    // ====  handle update competition ====
+    //updateCompetition: async (idCompetition,token ,name, dataPayment, dataCompetition, price)
     const updateCompetition = async (e, idCompetition) => {
         e.preventDefault();
-        console.log('Id da competição a ser atualizada:', idCompetition);
+        console.log('id da competicao a ser atualizada')
+        console.log(idCompetition)
         try {
             const response = await controllServiceCompetition.updateCompetition(
                 idCompetition,
@@ -172,24 +183,25 @@ const Home = () => {
                 newDataCompeticao,
                 newPrice
             );
-            console.log('COMPETIÇÃO ATUALIZADA COM SUCESSO --> ');
+            console.log('COMPETICAO ATUALIZADA COM SUCESSO --> ');
             console.log(await response.json());
         } catch (error) {
-            console.log('Erro ao atualizar competição. Erro --> ');
+            console.log('Erro ao atualizar competicao. Erro --> ');
             console.log(error);
+
         }
-        window.location.reload()
+        //window.location.reload()
     };
+
+
 
     return (
         <div className="containerHome">
             <h1>Competições</h1>
             {permission === 'sensei' && (
                 <div className="containerCompeticao">
-                    <FormCardCompetition  name="Cadastrar Competição "/>
                     <button className="btn-addComp">Adicionar competição</button>
                 </div>
-
             )}
 
             {competitions.map((comp, index) => (
@@ -199,9 +211,8 @@ const Home = () => {
                     <h4>Data da Competição: {comp.DataCompeticao}</h4>
                     <h3>Valor: {comp.valor} R$</h3>
                     <h3>Comp id {comp._id}</h3>
-
                     <ReactModal
-                        isOpen={openModalId === comp._id}
+                        isOpen={modalIsOpen}
                         onRequestClose={closeModal}
                         contentLabel="Modal competition"
                         className="modal-competition"
@@ -238,12 +249,11 @@ const Home = () => {
                             onChange={handleNewPriceChange}
                             required
                         />
-                        <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
+                        <button onClick={(e) => updateCompetition(e, comp._id)} >Atualizar competição </button>
                         <button onClick={closeModal}>Fechar modal</button>
+
                     </ReactModal>
-
-
-                    <button onClick={() => openModal(comp)}>Abrir modal</button>
+                    <button onClick={openModal}>Abrir modal</button>
                     {!cardsData[index].showForm && (
                         <button onClick={(e) => modalPayment(e, index)}>Pagar</button>
                     )}

@@ -186,7 +186,7 @@ const Home = () => {
             <h1>Competições</h1>
             {permission === 'sensei' && (
                 <div className="containerCompeticao">
-                    <FormCardCompetition  name="Cadastrar Competição "/>
+                    <FormCardCompetition  name="Formulario Home"/>
                     <button className="btn-addComp">Adicionar competição</button>
                 </div>
 

@@ -16,7 +16,10 @@ router.get('/',  controllAcces.accessControl, controllAcces.permissioAdminContro
     })
 })
 
-
+// essa consulta tem que ser pelo ID do usuario
+// o id do usuario vai estar na tabela de pagamentos
+// NAO pode ser pelo id do pagamento
+// se for usar, lista todos. Caso ao constrario lista apenas
 router.get('/:id', controllAcces.accessControl,  controllAcces.permissioAdminControll , async (req, res) => {
     const id = req.params.id
     paymentDAO.getPaymentByUserId(id).then((payment) => {

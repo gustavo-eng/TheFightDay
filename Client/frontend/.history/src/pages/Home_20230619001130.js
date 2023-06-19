@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
-import FormCardCompetition from "../Components/CardCompetition";
-import controllServiceCompetition from "../service/taskServiceCompetition";
 import controllServicePayment from "../service/taskServicePayment";
 
 import './home.css';
@@ -186,10 +184,8 @@ const Home = () => {
             <h1>Competições</h1>
             {permission === 'sensei' && (
                 <div className="containerCompeticao">
-                    <FormCardCompetition  name="Cadastrar Competição "/>
                     <button className="btn-addComp">Adicionar competição</button>
                 </div>
-
             )}
 
             {competitions.map((comp, index) => (

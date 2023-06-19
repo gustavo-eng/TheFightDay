@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
-import FormCardCompetition from "../Components/CardCompetition";
-import controllServiceCompetition from "../service/taskServiceCompetition";
 import controllServicePayment from "../service/taskServicePayment";
 
 import './home.css';
@@ -11,7 +9,7 @@ ReactModal.setAppElement('#root');
 const Home = () => {
     // Modal
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [openModalId, setOpenModalId] = useState(null);
+    const [openModalId, setOpenModalId] = useState(null)
     // Estado dos cards e dados das competições
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
@@ -163,22 +161,21 @@ const Home = () => {
     const updateCompetition = async (e, idCompetition) => {
         e.preventDefault();
         console.log('Id da competição a ser atualizada:', idCompetition);
-        try {
-            const response = await controllServiceCompetition.updateCompetition(
-                idCompetition,
-                token,
-                newNome,
-                newDataPagemento,
-                newDataCompeticao,
-                newPrice
-            );
-            console.log('COMPETIÇÃO ATUALIZADA COM SUCESSO --> ');
-            console.log(await response.json());
-        } catch (error) {
-            console.log('Erro ao atualizar competição. Erro --> ');
-            console.log(error);
-        }
-        window.location.reload()
+        // try {
+        //     const response = await controllServiceCompetition.updateCompetition(
+        //         idCompetition,
+        //         token,
+        //         newNome,
+        //         newDataPagemento,
+        //         newDataCompeticao,
+        //         newPrice
+        //     );
+        //     console.log('COMPETIÇÃO ATUALIZADA COM SUCESSO --> ');
+        //     console.log(await response.json());
+        // } catch (error) {
+        //     console.log('Erro ao atualizar competição. Erro --> ');
+        //     console.log(error);
+        // }
     };
 
     return (
@@ -186,10 +183,8 @@ const Home = () => {
             <h1>Competições</h1>
             {permission === 'sensei' && (
                 <div className="containerCompeticao">
-                    <FormCardCompetition  name="Cadastrar Competição "/>
                     <button className="btn-addComp">Adicionar competição</button>
                 </div>
-
             )}
 
             {competitions.map((comp, index) => (
@@ -199,51 +194,51 @@ const Home = () => {
                     <h4>Data da Competição: {comp.DataCompeticao}</h4>
                     <h3>Valor: {comp.valor} R$</h3>
                     <h3>Comp id {comp._id}</h3>
+                    {openModalId === comp._id && (
+                        <ReactModal
+                            isOpen={true}
+                            onRequestClose={closeModal}
+                            contentLabel="Modal competition"
+                            className="modal-competition"
+                        >
+                            <input
+                                type="text"
+                                placeholder="Nome da competição"
+                                name="newNome"
+                                value={newNome}
+                                onChange={handleNewNomeChange}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Nova data para pagamento"
+                                name="newDataPagemento"
+                                value={newDataPagemento}
+                                onChange={handleDataPagementoChange}
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Nova data competição"
+                                name="newDataCompeticao"
+                                value={newDataCompeticao}
+                                onChange={handleDataCompeticaoChange}
+                                required
+                            />
+                            <input
+                                type="number"
+                                placeholder="Preço atualizado"
+                                name="newPrice"
+                                value={newPrice}
+                                onChange={handleNewPriceChange}
+                                required
+                            />
+                            <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
+                            <button onClick={closeModal}>Fechar modal</button>
+                        </ReactModal>
 
-                    <ReactModal
-                        isOpen={openModalId === comp._id}
-                        onRequestClose={closeModal}
-                        contentLabel="Modal competition"
-                        className="modal-competition"
-                    >
-                        <input
-                            type="text"
-                            placeholder="Nome da competição"
-                            name="newNome"
-                            value={newNome}
-                            onChange={handleNewNomeChange}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Nova data para pagamento"
-                            name="newDataPagemento"
-                            value={newDataPagemento}
-                            onChange={handleDataPagementoChange}
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="Nova data competição"
-                            name="newDataCompeticao"
-                            value={newDataCompeticao}
-                            onChange={handleDataCompeticaoChange}
-                            required
-                        />
-                        <input
-                            type="number"
-                            placeholder="Preço atualizado"
-                            name="newPrice"
-                            value={newPrice}
-                            onChange={handleNewPriceChange}
-                            required
-                        />
-                        <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
-                        <button onClick={closeModal}>Fechar modal</button>
-                    </ReactModal>
-
-
-                    <button onClick={() => openModal(comp)}>Abrir modal</button>
+                    )}
+                    <button onClick={openModal}>Abrir modal</button>
                     {!cardsData[index].showForm && (
                         <button onClick={(e) => modalPayment(e, index)}>Pagar</button>
                     )}

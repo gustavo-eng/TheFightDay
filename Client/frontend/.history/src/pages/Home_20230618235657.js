@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ReactModal from "react-modal";
-import FormCardCompetition from "../Components/CardCompetition";
-import controllServiceCompetition from "../service/taskServiceCompetition";
 import controllServicePayment from "../service/taskServicePayment";
 
 import './home.css';
@@ -11,7 +9,7 @@ ReactModal.setAppElement('#root');
 const Home = () => {
     // Modal
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [openModalId, setOpenModalId] = useState(null);
+
     // Estado dos cards e dados das competições
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
@@ -132,13 +130,11 @@ const Home = () => {
     };
 
     // Funções para o modal
-    const openModal = (comp) => {
-        setOpenModalId(comp._id)
+    const openModal = () => {
         setIsOpen(true);
     };
 
     const closeModal = () => {
-        setOpenModalId(null)
         setIsOpen(false);
     };
 
@@ -163,22 +159,21 @@ const Home = () => {
     const updateCompetition = async (e, idCompetition) => {
         e.preventDefault();
         console.log('Id da competição a ser atualizada:', idCompetition);
-        try {
-            const response = await controllServiceCompetition.updateCompetition(
-                idCompetition,
-                token,
-                newNome,
-                newDataPagemento,
-                newDataCompeticao,
-                newPrice
-            );
-            console.log('COMPETIÇÃO ATUALIZADA COM SUCESSO --> ');
-            console.log(await response.json());
-        } catch (error) {
-            console.log('Erro ao atualizar competição. Erro --> ');
-            console.log(error);
-        }
-        window.location.reload()
+        // try {
+        //     const response = await controllServiceCompetition.updateCompetition(
+        //         idCompetition,
+        //         token,
+        //         newNome,
+        //         newDataPagemento,
+        //         newDataCompeticao,
+        //         newPrice
+        //     );
+        //     console.log('COMPETIÇÃO ATUALIZADA COM SUCESSO --> ');
+        //     console.log(await response.json());
+        // } catch (error) {
+        //     console.log('Erro ao atualizar competição. Erro --> ');
+        //     console.log(error);
+        // }
     };
 
     return (
@@ -186,10 +181,8 @@ const Home = () => {
             <h1>Competições</h1>
             {permission === 'sensei' && (
                 <div className="containerCompeticao">
-                    <FormCardCompetition  name="Cadastrar Competição "/>
                     <button className="btn-addComp">Adicionar competição</button>
                 </div>
-
             )}
 
             {competitions.map((comp, index) => (
@@ -201,7 +194,7 @@ const Home = () => {
                     <h3>Comp id {comp._id}</h3>
 
                     <ReactModal
-                        isOpen={openModalId === comp._id}
+                        isOpen={modalIsOpen}
                         onRequestClose={closeModal}
                         contentLabel="Modal competition"
                         className="modal-competition"
@@ -241,9 +234,7 @@ const Home = () => {
                         <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
                         <button onClick={closeModal}>Fechar modal</button>
                     </ReactModal>
-
-
-                    <button onClick={() => openModal(comp)}>Abrir modal</button>
+                    <button onClick={openModal}>Abrir modal</button>
                     {!cardsData[index].showForm && (
                         <button onClick={(e) => modalPayment(e, index)}>Pagar</button>
                     )}
