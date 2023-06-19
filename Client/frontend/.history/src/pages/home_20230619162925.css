@@ -31,7 +31,7 @@ body {
 }
 
 .containerCompeticao {
-    width: 70vh;
+    width: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,27 +43,6 @@ body {
     border: 2px solid green;
 
 }
-
-.btn-OpenModal {
-    cursor: pointer;
-    background-color: rgb(19, 182, 70);
-    margin-right: 2vh;
-    width: 9vh;
-    height: 3.2vh;
-    outline: none;
-    border: 1px solid green;
-    border-radius: 6px;
-    color: rgb(236, 236, 236);
-    font-weight: bold;
-}
-
-
-.btn-payBefore {
-background-color: red;
-}
-
-
-
 /*
 .allCards {
     align-items: end;
@@ -73,3 +52,8 @@ background-color: red;
 } */
 
 
+/*
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+*/

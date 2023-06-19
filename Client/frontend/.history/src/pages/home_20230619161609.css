@@ -25,13 +25,12 @@ body {
     border-radius: 5px;
     border: 1px solid green;
     margin-bottom: 3px;
-    width: 56vh;
-    padding: 15px;
-    margin-bottom: 20px;
+    width: 85vh;
+    background-color: purple;
 }
 
 .containerCompeticao {
-    width: 70vh;
+    width: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,37 +38,13 @@ body {
     border-radius: 12px;
     padding: 5px;
     margin-bottom: 4vh;
-    padding: 1px;
-    border: 2px solid green;
-
+    padding: 1.5vh;
+    border: 2cqi solid green;
 }
-
-.btn-OpenModal {
-    cursor: pointer;
-    background-color: rgb(19, 182, 70);
-    margin-right: 2vh;
-    width: 9vh;
-    height: 3.2vh;
-    outline: none;
-    border: 1px solid green;
-    border-radius: 6px;
-    color: rgb(236, 236, 236);
-    font-weight: bold;
-}
-
-
-.btn-payBefore {
-background-color: red;
-}
-
 
 
 /*
-.allCards {
-    align-items: end;
-    flex-wrap: wrap;
-    background-color: purple;
-    width: 100%;
-} */
-
-
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+*/

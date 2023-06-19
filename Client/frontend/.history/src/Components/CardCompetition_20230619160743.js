@@ -59,7 +59,7 @@ const FormCardCompetition = (props) => {
     return (
         <>
             <h1 className='titleRegisterComp'>{props.name}</h1>
-            <div className='divInputCardComp'>
+            <div>
                 <input
                     type="text"
                     placeholder="Nome da competição"

@@ -246,7 +246,7 @@ const Home = () => {
 
                         <button className="btn-OpenModal" onClick={() => openModal(comp)}>Abrir modal</button>
                         {!cardsData[index].showForm && (
-                            <button className="btn-payBefore" onClick={(e) => modalPayment(e, index)}>Pagar</button>
+                            <button onClick={(e) => modalPayment(e, index)}>Pagar</button>
                             )}
 
                         {cardsData[index].showForm && (

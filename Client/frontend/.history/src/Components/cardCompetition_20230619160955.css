@@ -1,0 +1,24 @@
+h1 {
+    color: rgb(129, 124, 124);
+}
+
+
+.titleRegisterComp {
+    color: rgb(175, 175, 175);
+}
+
+.divInputCardComp {
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.divInputCardComp  input {
+    background-color: rgb(175, 171, 175);
+    outline: none;
+    border-radius: 5px;
+    width: 30vh;
+    margin-bottom: 7px;
+}
+

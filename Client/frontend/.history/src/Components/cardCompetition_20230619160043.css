@@ -1,0 +1,14 @@
+h1 {
+    color: rgb(129, 124, 124);
+}
+
+
+.titleRegisterComp {
+    color: rgb(175, 175, 175);
+}
+
+
+.titleRegisterComp > input {
+    background-color: purple;
+}
+

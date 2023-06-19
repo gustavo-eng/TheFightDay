@@ -193,113 +193,112 @@ const Home = () => {
 )}
 
             {competitions.map((comp, index) => (
-                <div className="allCards">
-                    <div key={comp._id} className="cardCompetition">
-                        <h2>{comp.nome}</h2>
-                        <h4>Data do pagamento: {comp.DataPagamento}</h4>
-                        <h4>Data da Competição: {comp.DataCompeticao}</h4>
-                        <h3>Valor: {comp.valor} R$</h3>
-                        <h3>Comp id {comp._id}</h3>
 
-                        <ReactModal
-                            isOpen={openModalId === comp._id}
-                            onRequestClose={closeModal}
-                            contentLabel="Modal competition"
-                            className="modal-competition"
-                            >
-                            <input
-                                type="text"
-                                placeholder="Nome da competição"
-                                name="newNome"
-                                value={newNome}
-                                onChange={handleNewNomeChange}
-                                required
-                                />
-                            <input
-                                type="text"
-                                placeholder="Nova data para pagamento"
-                                name="newDataPagemento"
-                                value={newDataPagemento}
-                                onChange={handleDataPagementoChange}
-                                required
-                                />
-                            <input
-                                type="text"
-                                placeholder="Nova data competição"
-                                name="newDataCompeticao"
-                                value={newDataCompeticao}
-                                onChange={handleDataCompeticaoChange}
-                                required
-                                />
-                            <input
-                                type="number"
-                                placeholder="Preço atualizado"
-                                name="newPrice"
-                                value={newPrice}
-                                onChange={handleNewPriceChange}
-                                required
-                                />
-                            <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
-                            <button onClick={closeModal}>Fechar modal</button>
-                        </ReactModal>
+                <div key={comp._id} className="cardCompetition">
+                    <h2>{comp.nome}</h2>
+                    <h4>Data do pagamento: {comp.DataPagamento}</h4>
+                    <h4>Data da Competição: {comp.DataCompeticao}</h4>
+                    <h3>Valor: {comp.valor} R$</h3>
+                    <h3>Comp id {comp._id}</h3>
+
+                    <ReactModal
+                        isOpen={openModalId === comp._id}
+                        onRequestClose={closeModal}
+                        contentLabel="Modal competition"
+                        className="modal-competition"
+                        >
+                        <input
+                            type="text"
+                            placeholder="Nome da competição"
+                            name="newNome"
+                            value={newNome}
+                            onChange={handleNewNomeChange}
+                            required
+                            />
+                        <input
+                            type="text"
+                            placeholder="Nova data para pagamento"
+                            name="newDataPagemento"
+                            value={newDataPagemento}
+                            onChange={handleDataPagementoChange}
+                            required
+                            />
+                        <input
+                            type="text"
+                            placeholder="Nova data competição"
+                            name="newDataCompeticao"
+                            value={newDataCompeticao}
+                            onChange={handleDataCompeticaoChange}
+                            required
+                            />
+                        <input
+                            type="number"
+                            placeholder="Preço atualizado"
+                            name="newPrice"
+                            value={newPrice}
+                            onChange={handleNewPriceChange}
+                            required
+                            />
+                        <button onClick={(e) => updateCompetition(e, comp._id)}>Atualizar competição</button>
+                        <button onClick={closeModal}>Fechar modal</button>
+                    </ReactModal>
 
 
-                        <button className="btn-OpenModal" onClick={() => openModal(comp)}>Abrir modal</button>
-                        {!cardsData[index].showForm && (
-                            <button className="btn-payBefore" onClick={(e) => modalPayment(e, index)}>Pagar</button>
-                            )}
-
-                        {cardsData[index].showForm && (
-                            <>
-                                <h3>Formulário de Pagamento</h3>
-
-                                <form>
-                                    <input
-                                        type="text"
-                                        placeholder="Email"
-                                        name="email"
-                                        value={email}
-                                        onChange={handleEmailChange}
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Usuário"
-                                        name="user"
-                                        value={user}
-                                        onChange={handleUserChange}
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Nome da competição"
-                                        name="nameCompetition"
-                                        value={cardsData[index].nameCompetition}
-                                        onChange={(e) => handleNameCompetitionChange(e, index)}
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Categoria de peso"
-                                        name="categoryWeight"
-                                        value={cardsData[index].categoryWeight}
-                                        onChange={(e) => handleCategoryWeightChange(e, index)}
-                                        required
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="URL da imagem"
-                                        name="picture"
-                                        value={cardsData[index].picture}
-                                        onChange={(e) => handlePictureChange(e, index)}
-                                        required
-                                    />
-                                </form>
-                                <button onClick={(e) => handlePayment(e, index)}>Pagar2!</button>
-                                <button onClick={() => cancelPayment(index)}>Cancelar Pagamento</button>
-                            </>
+                    <button onClick={() => openModal(comp)}>Abrir modal</button>
+                    {!cardsData[index].showForm && (
+                        <button onClick={(e) => modalPayment(e, index)}>Pagar</button>
                         )}
-                    </div>
+
+                    {cardsData[index].showForm && (
+                        <>
+                            <h3>Formulário de Pagamento</h3>
+
+                            <form>
+                                <input
+                                    type="text"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={email}
+                                    onChange={handleEmailChange}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Usuário"
+                                    name="user"
+                                    value={user}
+                                    onChange={handleUserChange}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Nome da competição"
+                                    name="nameCompetition"
+                                    value={cardsData[index].nameCompetition}
+                                    onChange={(e) => handleNameCompetitionChange(e, index)}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Categoria de peso"
+                                    name="categoryWeight"
+                                    value={cardsData[index].categoryWeight}
+                                    onChange={(e) => handleCategoryWeightChange(e, index)}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="URL da imagem"
+                                    name="picture"
+                                    value={cardsData[index].picture}
+                                    onChange={(e) => handlePictureChange(e, index)}
+                                    required
+                                />
+                            </form>
+                            <button onClick={(e) => handlePayment(e, index)}>Pagar2!</button>
+                            <button onClick={() => cancelPayment(index)}>Cancelar Pagamento</button>
+                        </>
+                    )}
                 </div>
             ))}
         </div>
