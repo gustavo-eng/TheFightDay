@@ -54,19 +54,16 @@ const FormCardCompetition = (props) => {
                 const response = await controllServiceCompetition.saveCompetition(token,newNome, newDataPagemento, newDataCompeticao, newPrice)
                 console.log('Nova competicao salva --> ')
                 console.log(response)
-                window.location.reload()
 
             } else {
-                setValidateComp(true)
-                setTimeout(() => {
-                    setValidateComp(false)
-                }, 2300)
+
             }
 
         } catch (error) {
             console.log('Ocorreu um erro ao salvar nova competicao. Erro --> ')
             console.log(error)
         }
+        window.location.reload()
 
     }
 
@@ -108,9 +105,6 @@ const FormCardCompetition = (props) => {
                     />
             </div>
             <button className="btn-addComp" onClick={(e) => saveCompetition(e)}>Adicionar competição</button>
-            {validateComp && (
-                <h4 className='camp_error' > Campos inválidos. No mínimo 4 caracteres.   </h4>
-            )}
         </>
     )
 }

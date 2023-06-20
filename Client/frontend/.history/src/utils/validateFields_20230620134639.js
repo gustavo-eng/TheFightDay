@@ -8,13 +8,8 @@ const validatorNewCompetition = (nameCompetition,newDatePayment ,newDateCompetit
     }
 }
 
-const validatorUpdateUser = (user, password, email) => {
+const validatorUpdateUser = () => {
     console.log('validator new user')
-    if(user.length > 3 && password.length > 3 && email.length > 3) {
-        return true
-    } else {
-        return false
-    }
 
 }
 

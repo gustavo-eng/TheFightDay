@@ -4,7 +4,6 @@ import './profile.css';
 
 import { useNavigate } from 'react-router-dom';
 
-import validateFields from "../utils/validateFields";
 
 
 const Profile = (props) => {
@@ -37,12 +36,8 @@ const Profile = (props) => {
     }
 
     //updateUser: async (id, token, email, user, password,permission)
-    //const validatorUpdateUser = (user, password, email) =>
     const handleUpdateUser  = async (evt) => {
         evt.preventDefault()
-        if(validateFields.validatorUpdateUser()) {
-
-        }
         const response = await taskService.updateUser(userId, token, email, user, password, selectedPermission)
         alert("Usuário atualizado com sucesso!")
 
@@ -61,7 +56,7 @@ const Profile = (props) => {
     const handleDeleteUser = async (evt) => {
         evt.preventDefault()
         if(window.confirm('Tem certeza que deseja deletar usuario')) {
-            const response = await taskService.deleteUser(userId, token)
+            const response = taskService.deleteUser(userId, token)
             console.log('Uuario deletado com sucesso')
             response.then((data) => {
                 const user = data;

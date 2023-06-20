@@ -109,7 +109,7 @@ const FormCardCompetition = (props) => {
             </div>
             <button className="btn-addComp" onClick={(e) => saveCompetition(e)}>Adicionar competição</button>
             {validateComp && (
-                <h4 className='camp_error' > Campos inválidos. No mínimo 4 caracteres.   </h4>
+                <h4> Campos inválidos. No mínimo 3 caracteres.   </h4>
             )}
         </>
     )

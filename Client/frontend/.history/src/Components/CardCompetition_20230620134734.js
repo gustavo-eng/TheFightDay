@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import controllServiceCompetition from '../service/taskServiceCompetition';
 
-import validateFields from '../utils/validateFields';
 
 import './cardCompetition.css';
 
@@ -24,7 +23,6 @@ const FormCardCompetition = (props) => {
     const [newDataPagemento, setNewDataPagemento] = useState('');
     const [newDataCompeticao, setNewDataCompeticao] = useState('');
     const [newPrice, setNewPrice] = useState('');
-    const [validateComp, setValidateComp ] = useState(false)
 
     // ====================================
         const handleNewNomeChange = (e) => {
@@ -45,28 +43,17 @@ const FormCardCompetition = (props) => {
 
     // ====================================
         //saveCompetition: async (token, name, dataPayment, dataCompetition, price) => {
-            //const validatorNewCompetition = (nameCompetition,newDatePayment ,newDateCompetition,newPrice) => {
     const saveCompetition =  async (e) => {
         e.preventDefault()
         try {
-
-            if(validateFields.validatorNewCompetition(newNome, newDataPagemento, newDataCompeticao, newPrice)) {
-                const response = await controllServiceCompetition.saveCompetition(token,newNome, newDataPagemento, newDataCompeticao, newPrice)
-                console.log('Nova competicao salva --> ')
-                console.log(response)
-                window.location.reload()
-
-            } else {
-                setValidateComp(true)
-                setTimeout(() => {
-                    setValidateComp(false)
-                }, 2300)
-            }
-
+            const response = await controllServiceCompetition.saveCompetition(token,newNome, newDataPagemento, newDataCompeticao, newPrice)
+            console.log('Nova competicao salva --> ')
+            console.log(response)
         } catch (error) {
             console.log('Ocorreu um erro ao salvar nova competicao. Erro --> ')
             console.log(error)
         }
+        window.location.reload()
 
     }
 
@@ -108,9 +95,6 @@ const FormCardCompetition = (props) => {
                     />
             </div>
             <button className="btn-addComp" onClick={(e) => saveCompetition(e)}>Adicionar competição</button>
-            {validateComp && (
-                <h4 className='camp_error' > Campos inválidos. No mínimo 4 caracteres.   </h4>
-            )}
         </>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import taskService from '../service/taskServiceUser';
+import validateFields from '../utils/validateFields';
 
 //css
 import '../Components/formLogin.css';
@@ -42,8 +43,7 @@ const LoginScreen  = (props) => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-    //  validateFields.validatorUpdateUser()
-    //  validateFields.validatorNewCompetition()
+      validateFields.validatorNewCompetition
       console.log('Clicou no Entrar')
       const response = await taskService.login(user, password)
       console.log(' Response dentro do handleSubmit')

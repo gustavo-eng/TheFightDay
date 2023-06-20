@@ -60,7 +60,7 @@ const FormCardCompetition = (props) => {
                 setValidateComp(true)
                 setTimeout(() => {
                     setValidateComp(false)
-                }, 2300)
+                }, 3000)
             }
 
         } catch (error) {
@@ -109,7 +109,7 @@ const FormCardCompetition = (props) => {
             </div>
             <button className="btn-addComp" onClick={(e) => saveCompetition(e)}>Adicionar competição</button>
             {validateComp && (
-                <h4 className='camp_error' > Campos inválidos. No mínimo 4 caracteres.   </h4>
+                <> Campos invalidos </>
             )}
         </>
     )

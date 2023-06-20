@@ -4,7 +4,6 @@ import './profile.css';
 
 import { useNavigate } from 'react-router-dom';
 
-import validateFields from "../utils/validateFields";
 
 
 const Profile = (props) => {
@@ -37,12 +36,9 @@ const Profile = (props) => {
     }
 
     //updateUser: async (id, token, email, user, password,permission)
-    //const validatorUpdateUser = (user, password, email) =>
     const handleUpdateUser  = async (evt) => {
         evt.preventDefault()
-        if(validateFields.validatorUpdateUser()) {
 
-        }
         const response = await taskService.updateUser(userId, token, email, user, password, selectedPermission)
         alert("Usuário atualizado com sucesso!")
 

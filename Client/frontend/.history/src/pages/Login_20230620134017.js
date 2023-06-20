@@ -42,8 +42,7 @@ const LoginScreen  = (props) => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-    //  validateFields.validatorUpdateUser()
-    //  validateFields.validatorNewCompetition()
+
       console.log('Clicou no Entrar')
       const response = await taskService.login(user, password)
       console.log(' Response dentro do handleSubmit')
