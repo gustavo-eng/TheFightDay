@@ -1,0 +1,198 @@
+body {
+    background-color: rgb(219, 218, 218);
+    margin: 0;
+
+    background-image: none;
+    /* background-size: contain; */
+    background-position: 500px; /* Posiciona a imagem no canto superior esquerdo */
+}
+
+/* moddal ==================================================================*/
+
+.modal-competition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    background-color: rgb(139, 139, 139);
+    border-radius: 10px;
+    width: 40vh;
+    height: 39vh;
+    margin-left: 39%;
+    border: 2px solid green;
+    margin-top: 29vh;
+}
+
+.modal-competition input {
+    background-color: rgb(223, 223, 220);
+    padding: 2px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 2.2vh;
+    height: 3vh;
+}
+
+.modal-competition button {
+    background-color: rgb(12, 130, 6);
+    border: none;
+    margin-top: 2.6vh;
+    border-radius: 5px;
+    height: 4vh;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.btn-Close-modal {
+    background-color: rgb(182, 16, 16) !important;
+}
+
+
+/* moddal ==================================================================*/
+.containerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.cardCompetition {
+    border-radius: 5px;
+    border: 1px solid green;
+    margin-bottom: 3px;
+    width: 56vh;
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: rgb(123, 123, 123);
+}
+
+.containerCompeticao {
+    width: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(112, 107, 112);
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 4vh;
+    padding: 1px;
+    border: 2px solid green;
+
+}
+
+.btn-OpenModal {
+    cursor: pointer;
+    background-color: rgb(19, 182, 70);
+    margin-right: 2vh;
+    width: 9vh;
+    height: 3.2vh;
+    outline: none;
+    border: 1px solid green;
+    border-radius: 6px;
+    color: rgb(236, 236, 236);
+    font-weight: bold;
+    font-size: 9px;
+
+}
+
+
+.btn-payBefore {
+
+    background-color: rgb(140, 166, 10);
+    cursor: pointer;
+    /* background-color: rgb(19, 182, 70); */
+    margin-right: 2vh;
+    width: 9vh;
+    height: 3.2vh;
+    font-size: 10px;
+    outline: none;
+    border: 1px solid rgb(68, 94, 3);
+    border-radius: 6px;
+    color: rgb(236, 236, 236);
+    /* font-weight: bold; */
+}
+
+
+.cardAtributes {
+    background-color: rgb(206, 204, 204);
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.formPayment {
+    background-color: rgb(167, 162, 162);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1px;
+    color: rgb(71, 71, 68);
+    border-radius: 10px;
+    margin-top: 3vh;
+
+
+}
+
+
+.formPayment  input {
+    background-color: rgb(237, 232, 237);
+    display: flex;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    margin-left: 2vh;
+    outline: none;
+    height: 22px;
+    width: 28vh;
+    border:  1px solid rgb(105, 104, 104);
+
+}
+
+
+.btn-form-payment {
+    background-color: rgb(7, 144, 10);
+    width: 15vh;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
+    height: 3vh;
+    align-self: flex-end;
+    margin-right: 2vh;
+    margin-top: 3vh;
+    margin-bottom: 2.7vh;
+    cursor: pointer;
+
+}
+
+.btn-cancel-form-payment {
+    background-color: rgb(144, 41, 7);
+    width: 15vh;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
+    height: 3vh;
+    align-self: flex-end;
+    margin-right: 2vh;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/*
+.allCards {
+    align-items: end;
+    flex-wrap: wrap;
+    background-color: purple;
+    width: 100%;
+} */
+
+
