@@ -129,9 +129,7 @@ const Profile = (props) => {
                     <button onClick={handleUpdateUser} className="submit-btn">Atualizar</button>
                     <button onClick={handleDeleteUser} className="submit-btn del ">Deletar usuário</button>
                     <button onClick={() => navigate('/payments')} className="submit-btn pay ">Meus pagamentos</button>
-                    {validateUpdateUser && (
-                        <h5 className="error-update-user">Erro ao atualizar usuario. Campos inválidos </h5>
-                    )}
+                    <h5 className="error-update-user">Erro ao atualizar usuario </h5>
                 </form>
                 <div id="success-message" className="success-message"></div>
                 <div id="error-message" className="error-message"></div>

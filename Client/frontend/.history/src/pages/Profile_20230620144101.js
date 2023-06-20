@@ -20,8 +20,6 @@ const Profile = (props) => {
     const userId = localStorage.getItem('userId')
     const token = localStorage.getItem('token')
 
-    const [validateUpdateUser, setValidateUpdateUser] = useState(false)
-
     const handlePermissionChange = (event) => {
         setSelectedPermission(event.target.value);
     };
@@ -44,25 +42,20 @@ const Profile = (props) => {
         evt.preventDefault()
         if(validateFields.validatorUpdateUser(user, password, email)) {
             const response = await taskService.updateUser(userId, token, email, user, password, selectedPermission)
-            alert("Usuário atualizado com sucesso!. new User --> ")
-            console.log(response)
-            response.then((data) => {
-                const user = data;
-                console.log('usuario alterado')
-                console.log('Sucesso ao atualizar user')
-                console.log(user);
-              }).catch((error) => {
-                console.error(error);
-            });
-        } else {
-            setValidateUpdateUser(true)
-            setTimeout(() => {
-                setValidateUpdateUser(false)
-            }, 2500)
+            alert("Usuário atualizado com sucesso!")
+
         }
 
 
 
+        response.then((data) => {
+            const user = data;
+            console.log('usuario alterado')
+            console.log('Sucesso ao atualizar user')
+            console.log(user);
+          }).catch((error) => {
+            console.error(error);
+        });
 
     }
 
@@ -129,9 +122,6 @@ const Profile = (props) => {
                     <button onClick={handleUpdateUser} className="submit-btn">Atualizar</button>
                     <button onClick={handleDeleteUser} className="submit-btn del ">Deletar usuário</button>
                     <button onClick={() => navigate('/payments')} className="submit-btn pay ">Meus pagamentos</button>
-                    {validateUpdateUser && (
-                        <h5 className="error-update-user">Erro ao atualizar usuario. Campos inválidos </h5>
-                    )}
                 </form>
                 <div id="success-message" className="success-message"></div>
                 <div id="error-message" className="error-message"></div>
