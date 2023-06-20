@@ -187,7 +187,6 @@ const Home = () => {
             const response = await controllServiceCompetition.deleteCompetition(idCompetition, token)
             console.log('Competicao deletada com sucesso !!. Response --> ')
             console.log(response)
-            window.location.reload()
 
         } catch (error) {
             console.log('Erro ao deletar competicao. Erro --> ')
@@ -262,14 +261,13 @@ const Home = () => {
                             <button className="btn-Close-modal" onClick={closeModal}>Fechar modal</button>
                             {permission === 'sensei' && (
                                 <>
-                                <button className="btn-del-comp"onClick={(e) => deleteCompetition(e, comp._id )} > Deletar </button>
+                                <button className="btn-del-comp"> Deletar </button>
                                 </>
 
                             )}
                         </ReactModal>
-                        {permission === 'sensei' && (
-                            <button className="btn-OpenModal" onClick={() => openModal(comp)}>Atualizar </button>
-                        )}
+
+                        <button className="btn-OpenModal" onClick={() => openModal(comp)}>Atualizar </button>
                         {!cardsData[index].showForm && (
                             <button className="btn-payBefore" onClick={(e) => modalPayment(e, index)}>Pagar</button>
                         )}

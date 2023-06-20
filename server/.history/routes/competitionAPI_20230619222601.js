@@ -52,6 +52,7 @@ router.delete("/:id", controllAcces.accessControl, controllAcces.permissioAdminC
 router.put("/:id", controllAcces.accessControl, controllAcces.permissioAdminControll ,async (req, res) => {
     const {name, dataPayment, dataCompetition, price} = req.body
     const {id} = req.params
+
     competitionDAO.update(id,name, dataPayment, dataCompetition, price)
     .then(competition => {
         res.status(200).json(competition)

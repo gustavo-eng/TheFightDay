@@ -36,8 +36,7 @@ const LoginScreen  = (props) => {
     //falta o handleEmailChange
 
     useEffect(() => {
-        // localStorage.removeItem('token')
-        localStorage.clear()
+        localStorage.removeItem('token')
     }, [])
 
     const handleSubmit = async (e) => {

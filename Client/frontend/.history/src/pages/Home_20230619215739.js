@@ -267,9 +267,8 @@ const Home = () => {
 
                             )}
                         </ReactModal>
-                        {permission === 'sensei' && (
-                            <button className="btn-OpenModal" onClick={() => openModal(comp)}>Atualizar </button>
-                        )}
+
+                        <button className="btn-OpenModal" onClick={() => openModal(comp)}>Atualizar </button>
                         {!cardsData[index].showForm && (
                             <button className="btn-payBefore" onClick={(e) => modalPayment(e, index)}>Pagar</button>
                         )}

@@ -43,7 +43,7 @@ let controllServiceCompetition = {
             method: 'DELETE',
             headers: {'Content-type': 'application/json', 'Custom-Header': token},
         }
-        const response = await fetch(`http://localhost:3333/competition/${idCompetition}`, data)
+        const response = await fetch(`http://localhost:3333/competition/${idCompetition}`)
 
         if (!response.ok) {
             throw new Error('2Erro ao atualizar a competição2222');
