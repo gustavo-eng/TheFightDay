@@ -1,0 +1,258 @@
+body {
+    background-color: rgb(219, 218, 218);
+    margin: 0;
+    /* background-image: url('https://c4.wallpaperflare.com/wallpaper/246/188/1015/fight-skill-training-technique-wallpaper-preview.jpg'); */
+    background-size: contain;
+    background-position: 500px; /* Posiciona a imagem no canto superior esquerdo */
+}
+
+  #fundo {
+    height: 93vh;
+    width: 100%;
+    opacity: 0.95;
+    margin-bottom: -5px;
+  }
+
+  header {
+      background-color: #333;
+      height: 80px;
+      border-bottom: 3.2px solid green;
+  }
+
+  nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 20px;
+      color: #fff;
+  }
+
+  .logo img {
+      height: 60px;
+  }
+
+  .menu {
+      list-style: none;
+      display: flex;
+  }
+
+  .menu li {
+      margin-right: 20px;
+  }
+
+  .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+  }
+
+  .menu li a:hover {
+      color: green;
+  }
+
+  .container_proposta p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+    background-color: #ffffff;
+    width: 94vh;
+    border-radius: 15px;
+    border: solid 0.7px black;
+    padding: 18px;
+  }
+
+  .proposta_title {
+    position: relative;
+    /*   background-color: red; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .proposta_title::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 1;
+    width: 24vh;
+    height: 3px;
+    background-color: green;
+  }
+
+  .container_proposta  {
+    /*   background-color: red; */
+
+      display: flex;
+      flex: 1;
+      flex-direction: column-reverse;
+    }
+
+   .p_proposta {
+    width: 75%;
+    align-self: center;
+    font-weight: bold;
+    color: #e1e1e1;
+   }
+
+  .container_form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container_login {
+    /* background-color: yellow; */
+    margin-top: 18vh;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+   }
+
+  .login-form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 34%;
+    margin-top: 2px;
+    margin-bottom: 1.2%;
+    background-color: #545252;
+     /* aquiii fsfdafsfsdgdfsgsdfdsfgfg*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 55vh;
+    border-radius: 5px;
+    border: 1.3px solid rgb(27, 27, 27);
+  }
+
+  .login-form h2 {
+    /* background-color: red; */
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    /* background-color: purple; */
+    width: 38vh;
+    height: 20%;
+    /* padding: 10px; */
+    margin-bottom: 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    outline-width: 0;
+    margin-left: 15%;
+  }
+
+  .login-form button {
+    width: 30%;
+    /* padding: 10px; */
+    height: 30%;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-bottom: 19px;
+    margin-left: 35%;
+
+  }
+
+  .container_form {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-form button:hover {
+    background-color: #267029;
+  }
+
+  footer {
+
+    position: relative; /* aquiii */
+    display: flex;
+    align-self: flex-end;
+    flex-direction: row;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 9px 0;
+    font-size: 14px;
+    border-top: 3.2px solid green;
+
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .footer-logo img {
+    height: 50px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+  }
+
+  .footer-links li {
+    display: inline-block;
+    margin-right: 90px;
+  }
+
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-social a {
+    margin-right: 10px;
+  }
+
+  .footer-social img {
+    height: 20px;
+  }
+
+
+  .container_main {
+    display: flex;
+    flex: 1;
+    flex-direction: column-reverse;
+    align-content: flex-end;
+  }
+
+  #permissionSelect2 {
+    display: flex;
+    margin-left: 8.35vh;
+    background-color: rgb(135, 135, 135);
+    margin-bottom: 8vh;
+    color: white;
+    border-radius: 5px;
+    height: 4vh;
+    width: 15vh;
+}
+
+.advice-error {
+  color: rgb(219, 163, 163);
+  font-size: 12px;
+  align-self: center;
+  display: flex;
+}
