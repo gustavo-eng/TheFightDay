@@ -65,7 +65,6 @@ router.get("/contato", async (req, res) => {
 
 router.post('/contato', TaskValidator.validateFields ,async (req, res) => {
   const { name, email, subject, message } = req.body
-  console.warn('entrou em  router.post(/contato), TaskValidator.validateFields, async ')
 
   const transport =  nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
@@ -82,7 +81,7 @@ router.post('/contato', TaskValidator.validateFields ,async (req, res) => {
       console.log(error)
 
     } else {
-      console.log(' -------- Server is ready to take your emails OK EMAIL OK ------------ ')
+      console.log(' -------- Server is ready to take your emails ------------ ')
     }
 
   })

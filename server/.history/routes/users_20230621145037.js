@@ -17,6 +17,7 @@ router.get('/profile', controllAcces.accessControl, async (req, res) => {
    })
 })
 
+
 router.get('/', controllAcces.accessControl, controllAcces.permissioAdminControll ,function(req, res, next) {
     UserDAO.list().then(users => {
       res.status(200).json(users)
@@ -29,6 +30,7 @@ router.get('/', controllAcces.accessControl, controllAcces.permissioAdminControl
 router.post("/",validator.validateFieldsUser ,(req, res) => { // aplicar regra de negocio aqui para analisar quantidade de users com permission admin
   const idPayment = req.query.payment
   const {email, user, password, permission} = req.body
+
   UserDAO.save(email, user
     , password, permission).then(user => {
     res.status(201).json(user)

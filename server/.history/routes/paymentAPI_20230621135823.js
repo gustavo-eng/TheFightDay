@@ -34,7 +34,7 @@ router.get('/:id', controllAcces.accessControl,  controllAcces.permissioAdminCon
 })
 
 
-router.post('/', controllAcces.accessControl, validatorFieldsPayment.validateFieldsPayment ,async (req, res) => {
+router.post('/', controllAcces.accessControl, async (req, res) => {
     const { email, user, nameCompetition, categoryWeight, categoryYear, picture } = req.body
     const idCompetition = req.query.competition
     competitionDAO.getById(idCompetition).then(() => {

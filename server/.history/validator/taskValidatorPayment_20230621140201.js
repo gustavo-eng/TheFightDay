@@ -12,9 +12,8 @@ const taskSchemaPayment = Joi.object({
 
     categoryWeight: Joi.string().min(2).max(32).required(),
 
-    categoryYear: Joi.string().min(3).max(30).required(),
+    categoryYear: Joi.string().min(3).max(30)
 
-    picture: Joi.string().allow('')
 })
 
 module.exports = {

@@ -14,7 +14,7 @@ const taskSchemaPayment = Joi.object({
 
     categoryYear: Joi.string().min(3).max(30).required(),
 
-    picture: Joi.string().allow('')
+    picture: Joi.string()
 })
 
 module.exports = {
