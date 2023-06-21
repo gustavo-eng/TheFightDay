@@ -2,14 +2,13 @@ const Joi = require('joi')
 
 const taskSchema = Joi.object({
 
-    user: Joi.string()
-    .min(2)
-    .max(15)
+    email: Joi.string()
+    .email()
     .required(),
 
 
     password: Joi.string()
-    .min(3)
+    .min(6)
     .max(25)
     .required(),
 
@@ -21,15 +20,15 @@ const taskSchema = Joi.object({
 module.exports = {
     validateFields: function(req, res, next) {
         const {error, value } = taskSchema.validate(req.body)
-''
+
         if (error) {
             console.log('Erro ao validar campos')
             console.log(error.details[0].message)
-            return res.status(400).json({status: false, msg: `Erro -- ${error.details[0].message}`})
+            return res.status(400).json({status: false, msg: "Valores invalidos para os campos email e password"})
         }
 
         console.log('Campos de login invalidos')
-        // req.body = value
+        req.body = value
         return next()
 
     }

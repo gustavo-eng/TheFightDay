@@ -3,7 +3,7 @@ const Joi = require('joi')
 const taskSchema = Joi.object({
 
     user: Joi.string()
-    .min(2)
+    .min(3)
     .max(15)
     .required(),
 
@@ -14,7 +14,7 @@ const taskSchema = Joi.object({
     .required(),
 
 
-}).with("user", "password")
+})
 
 
 

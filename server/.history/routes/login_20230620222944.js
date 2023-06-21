@@ -19,8 +19,9 @@ router.get('/', (req, res) => {
 })
 
 
-router.post('/', validador.validateFields , async (req, res) => {
+router.post('/', validador.validateFields,async (req, res) => {
     const {user, password} = req.body
+    console.log('TESTEEEEE')
     const usuario =  await UserDAO.getByNameAndPassord(user, password)
     console.log(usuario)
 

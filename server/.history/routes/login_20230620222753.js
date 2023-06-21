@@ -1,8 +1,6 @@
 const express = require('express')
 
-// import ValidateLogin from '../validator/ValidateLogin'
-const validador = require('../validator/ValidateLogin')
-
+import ValidateLogin from '../validator/ValidateLogin'
 const router = express.Router()
 
 // jwt
@@ -19,8 +17,9 @@ router.get('/', (req, res) => {
 })
 
 
-router.post('/', validador.validateFields , async (req, res) => {
+router.post('/', ValidateLogin.validateFields ,async (req, res) => {
     const {user, password} = req.body
+    console.log('TESTEEEEE')
     const usuario =  await UserDAO.getByNameAndPassord(user, password)
     console.log(usuario)
 

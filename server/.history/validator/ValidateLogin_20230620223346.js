@@ -14,7 +14,7 @@ const taskSchema = Joi.object({
     .required(),
 
 
-}).with("user", "password")
+})
 
 
 
