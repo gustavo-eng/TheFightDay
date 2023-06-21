@@ -51,7 +51,7 @@ router.post('/', controllAcces.accessControl, async (req, res) => {
 })
 
 
-
+//MELHORAR
 router.delete("/:id",controllAcces.accessControl, controllAcces.permissioAdminControll, async (req, res) => {
     const {id} = req.params
     const payment = await paymentDAO.getById(id)

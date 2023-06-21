@@ -15,8 +15,9 @@ router.get('/profile', controllAcces.accessControl, async (req, res) => {
    })
 })
 
-
+/* GET users listing. */
 router.get('/', controllAcces.accessControl, controllAcces.permissioAdminControll ,function(req, res, next) {
+    // res.send('Esta dentro de users ')
     UserDAO.list().then(users => {
       res.status(200).json(users)
     }).catch(err => {
@@ -37,7 +38,6 @@ router.post("/", (req, res) => { // aplicar regra de negocio aqui para analisar 
     res.status(400).send('Erro ao salvar o User.')
   })
 })
-
 router.put("/:id", controllAcces.accessControl ,(req, res) => {
   const {email, user, password, permission} = req.body
   const { id } = req.params
@@ -52,6 +52,7 @@ router.put("/:id", controllAcces.accessControl ,(req, res) => {
   }
 })
 
+//MIDDLEWARE
 router.delete("/:id", controllAcces.accessControl ,(req, res) => {
   const { id } = req.params
   if(req.id == req.params.id || req.userPermission.includes('sensei')) {
@@ -66,8 +67,8 @@ router.delete("/:id", controllAcces.accessControl ,(req, res) => {
   }
 
 })
-
-
+//MIDDLEWARE
+//MIDDLE DE PROFESSOR
 router.get('/:id', controllAcces.accessControl ,(req, res) => {
   const { id } = req.params
   if(req.id == req.params.id || req.userPermission.includes('sensei')) {

@@ -17,6 +17,7 @@ router.get('/profile', controllAcces.accessControl, async (req, res) => {
 
 
 router.get('/', controllAcces.accessControl, controllAcces.permissioAdminControll ,function(req, res, next) {
+
     UserDAO.list().then(users => {
       res.status(200).json(users)
     }).catch(err => {
