@@ -57,6 +57,12 @@ let controllServicePayment = {
         return response.json()
     },
 
+    listAll: async () => {
+        const data = {
+            method: 'DELETE',
+            headers: {'Content-type': 'application/json'},
+        }
+    }
 }
 
 

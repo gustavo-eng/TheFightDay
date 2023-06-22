@@ -130,15 +130,3 @@ s
   background-color: blue;
   color: rgb(200, 199, 199);
 }
-
-
-.pdf_export {
-  background-color: rgb(9, 9, 129);
-  display: flex;
-  margin-top: 2vh;
-  text-decoration: none;
-  color: white;
-  padding: 6px;
-  border-radius: 5px;
-
-}

@@ -3,8 +3,11 @@ import taskService from '../service/taskServiceUser';
 import './profile.css';
 
 import ReactModal from "react-modal";
+
+import ApexCharts from "apexcharts";
+
 // import ReactModal from "react-modal";
-import ChartComponent from "../Components/Charts";
+
 
 import { useNavigate } from 'react-router-dom';
 
@@ -97,6 +100,13 @@ const Profile = (props) => {
     }
 
 
+    //Chart
+    // function Chart() {
+    //     return (
+
+    //     )
+    // }
+
 
     return (
         <>
@@ -109,15 +119,12 @@ const Profile = (props) => {
                 >
                     <h3>Estatísca</h3>
 
-                    <h1>Gráfico de Barras</h1>
+                    <ApexCharts
 
-                    <ChartComponent />
+                    />
 
 
-                    <button onClick={handleOpenedModal} > Close Modal </button>
-
-                    <a href="http://localhost:3333/report" className="pdf_export"> Exportar PDF </a>
-
+                    <button onClick={handleOpenedModal}> Close Modal </button>
                 </ReactModal>
 
                 <h2>  Usuário : {username}  </h2>

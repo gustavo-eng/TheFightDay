@@ -3,8 +3,10 @@ import taskService from '../service/taskServiceUser';
 import './profile.css';
 
 import ReactModal from "react-modal";
+
+
 // import ReactModal from "react-modal";
-import ChartComponent from "../Components/Charts";
+
 
 import { useNavigate } from 'react-router-dom';
 
@@ -97,6 +99,40 @@ const Profile = (props) => {
     }
 
 
+    //Chart
+    // function Chart() {
+    //     return (
+
+    //     )
+    // }
+
+    const BarChart = () => {
+        const options = {
+          chart: {
+            id: "bar-chart",
+          },
+          xaxis: {
+            categories: ["Usuários", "Pagamentos", "Competições"],
+          },
+        };
+
+        const series = [
+          {
+            name: "Quantidade",
+            data: [10, 15, 8],
+          },
+        ];
+
+        return (
+          <Chart
+            options={options}
+            series={series}
+            type="bar"
+            height={350}
+            width={500}
+          />
+        );
+      };
 
     return (
         <>
@@ -110,14 +146,10 @@ const Profile = (props) => {
                     <h3>Estatísca</h3>
 
                     <h1>Gráfico de Barras</h1>
+                    <BarChart />
 
-                    <ChartComponent />
 
-
-                    <button onClick={handleOpenedModal} > Close Modal </button>
-
-                    <a href="http://localhost:3333/report" className="pdf_export"> Exportar PDF </a>
-
+                    <button onClick={handleOpenedModal}> Close Modal </button>
                 </ReactModal>
 
                 <h2>  Usuário : {username}  </h2>

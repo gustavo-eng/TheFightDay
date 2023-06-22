@@ -113,11 +113,9 @@ const Profile = (props) => {
 
                     <ChartComponent />
 
+                    <a href="http://localhost:3333/report"> Exportar dados </a>
 
-                    <button onClick={handleOpenedModal} > Close Modal </button>
-
-                    <a href="http://localhost:3333/report" className="pdf_export"> Exportar PDF </a>
-
+                    <button onClick={handleOpenedModal}> Close Modal </button>
                 </ReactModal>
 
                 <h2>  Usuário : {username}  </h2>

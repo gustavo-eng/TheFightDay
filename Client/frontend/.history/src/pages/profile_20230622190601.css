@@ -133,12 +133,5 @@ s
 
 
 .pdf_export {
-  background-color: rgb(9, 9, 129);
-  display: flex;
-  margin-top: 2vh;
-  text-decoration: none;
-  color: white;
-  padding: 6px;
-  border-radius: 5px;
-
+  background-color: red;
 }

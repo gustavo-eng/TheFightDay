@@ -57,6 +57,15 @@ let controllServicePayment = {
         return response.json()
     },
 
+    listAll: async () => {
+        const data = {
+            method: 'GET',
+            headers: {'Content-type': 'application/json'},
+        }
+        const response = await fetch(`http://localhost:3333/payment`, data)
+        return response.json()
+
+    }
 }
 
 

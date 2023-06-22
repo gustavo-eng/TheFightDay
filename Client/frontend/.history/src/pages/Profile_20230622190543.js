@@ -116,7 +116,7 @@ const Profile = (props) => {
 
                     <button onClick={handleOpenedModal} > Close Modal </button>
 
-                    <a href="http://localhost:3333/report" className="pdf_export"> Exportar PDF </a>
+                    <a href="http://localhost:3333/report" > Exportar PDF </a>
 
                 </ReactModal>
 

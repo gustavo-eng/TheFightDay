@@ -98,6 +98,12 @@ const Profile = (props) => {
 
 
 
+
+
+
+
+
+
     return (
         <>
              <div className="container_contato">
@@ -111,13 +117,10 @@ const Profile = (props) => {
 
                     <h1>Gráfico de Barras</h1>
 
+
                     <ChartComponent />
 
-
-                    <button onClick={handleOpenedModal} > Close Modal </button>
-
-                    <a href="http://localhost:3333/report" className="pdf_export"> Exportar PDF </a>
-
+                    <button onClick={handleOpenedModal}> Close Modal </button>
                 </ReactModal>
 
                 <h2>  Usuário : {username}  </h2>
