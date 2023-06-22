@@ -19,6 +19,7 @@ router.get('/', (req, res) => { // QUALQUER UM PODE ACESSAR
       })
 })
 
+//    save: async (nome, DataPagamento, DataCompeticao, valor, idPayment) => {
 router.post("/load_competition", async (req, res) => {
     try {
         const competitions = [
