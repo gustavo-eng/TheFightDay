@@ -51,7 +51,7 @@ const  Homefree = (props) => {
 // {_id: '649483ad2e001807e6435a6a', nome: 'Camp4', DataPagamento: '02/03/2024', DataCompeticao: '02/05/2024', valor: 58, …}
     return (
         <div className="container_pagination">
-            <h1 className="h1_pagination"> Competições </h1>
+            <h1> Competições </h1>
             {
                 competition.length > 0 ?
                  competition.map((comp, index) => {
