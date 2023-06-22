@@ -3,7 +3,7 @@
 const Joi = require('joi')
 
 const taskSchemaPayment = Joi.object({
-    email: Joi.string().min(5).max(50).required(),
+    email: Joi.string().min(8).max(50).required(),
 
     user: Joi.string().min(3).max(35).required(),
 

@@ -25,7 +25,7 @@ router.get('/',async (req, res) => {
   console.log('QUANTIDADE DE PAGAMENTOS')
   console.log(qtdPayment.length)
   const chart = new Chart(ctx, {
-    type: 'bar', // Tipo de gráfico (pode ser 'bar', 'line', 'pie', etc.)
+    type: 'pie', // Tipo de gráfico (pode ser 'bar', 'line', 'pie', etc.)
     data: {
       labels: ['Usuários', 'Pagamentos', 'Competições'], // Rótulos do eixo x
       datasets: [

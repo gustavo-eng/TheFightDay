@@ -4,12 +4,12 @@ const { createCanvas } = require('canvas');
 const Chart = require('chart.js/auto');
 const puppeteer = require('puppeteer');
 
-const competitionDAO = require('../model/Competition')
+
 const UserDAO = require('../model/Users');
-const paymentDAO = require('../model/Payment')
 
 
-router.get('/',async (req, res) => {
+
+router.get('/', async (req, res) => {
   // Crie um canvas para renderizar o gráfico
   const canvas = createCanvas(800, 600); // Substitua as dimensões conforme necessário
   const ctx = canvas.getContext('2d');
@@ -17,13 +17,10 @@ router.get('/',async (req, res) => {
   console.log('Quantidade user')
   console.log((await UserDAO.list()).length)
 
+  console.log('qtdUser')
   const qtdUser = await UserDAO.list()
-  const qtdPayment = await paymentDAO.list()
-  const qtdCompetitions = await competitionDAO.list()
+  console.log(qtdUser.length)
   // Crie o gráfico usando as configurações desejadas
-
-  console.log('QUANTIDADE DE PAGAMENTOS')
-  console.log(qtdPayment.length)
   const chart = new Chart(ctx, {
     type: 'bar', // Tipo de gráfico (pode ser 'bar', 'line', 'pie', etc.)
     data: {
@@ -31,10 +28,10 @@ router.get('/',async (req, res) => {
       datasets: [
         {
           label: 'Dados do Gráfico',
-          data: [qtdUser.length, qtdPayment.length, qtdCompetitions.length], // Valores correspondentes aos rótulos
-          backgroundColor: 'rgba(55, 12, 182, 0.2)', // Cor de preenchimento das barras
-          borderColor: 'rgba(75, 52, 122, 1)', // Cor da borda das barras
-          borderWidth: 2, // Largura da borda das barras
+          data: [qtdUser, 20, 30], // Valores correspondentes aos rótulos
+          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de preenchimento das barras
+          borderColor: 'rgba(75, 192, 192, 1)', // Cor da borda das barras
+          borderWidth: 1, // Largura da borda das barras
         },
       ],
     },

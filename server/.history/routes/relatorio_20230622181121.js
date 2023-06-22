@@ -19,7 +19,6 @@ router.get('/',async (req, res) => {
 
   const qtdUser = await UserDAO.list()
   const qtdPayment = await paymentDAO.list()
-  const qtdCompetitions = await competitionDAO.list()
   // Crie o gráfico usando as configurações desejadas
 
   console.log('QUANTIDADE DE PAGAMENTOS')
@@ -31,10 +30,10 @@ router.get('/',async (req, res) => {
       datasets: [
         {
           label: 'Dados do Gráfico',
-          data: [qtdUser.length, qtdPayment.length, qtdCompetitions.length], // Valores correspondentes aos rótulos
-          backgroundColor: 'rgba(55, 12, 182, 0.2)', // Cor de preenchimento das barras
-          borderColor: 'rgba(75, 52, 122, 1)', // Cor da borda das barras
-          borderWidth: 2, // Largura da borda das barras
+          data: [qtdUser.length, qtdPayment.length, 30], // Valores correspondentes aos rótulos
+          backgroundColor: 'rgba(75, 192, 192, 0.2)', // Cor de preenchimento das barras
+          borderColor: 'rgba(75, 192, 192, 1)', // Cor da borda das barras
+          borderWidth: 1, // Largura da borda das barras
         },
       ],
     },
