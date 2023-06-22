@@ -1,0 +1,57 @@
+.container_pagination {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+  h1 {
+    color: #006400; /* verde escuro */
+  }
+
+  .container_competition {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #03600b; /* cinza claro */
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    color: #006400; /* verde escuro */
+  }
+
+  .price {
+    color: #006400; /* verde escuro */
+  }
+
+  .data_payment,
+  .data_comp {
+    color: #006400; /* verde escuro */
+  }
+
+  .btn-next,
+  .btn-before {
+    background-color: #222298; /* azul escuro */
+    color: #ffffff; /* branco */
+    padding: 10px 20px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 8vh;
+    margin-top: 3vh;
+    width: 18%;
+    align-self: flex-end;
+
+
+  }
+
+  .btn-next:hover,
+  .btn-before:hover {
+    opacity: 0.8;
+  }
+
+  .missing {
+    background-color: red;
+  }

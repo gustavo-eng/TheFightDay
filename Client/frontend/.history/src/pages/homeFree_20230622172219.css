@@ -1,0 +1,40 @@
+.container {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #006400; /* verde escuro */
+  }
+
+  .container_competition {
+
+  }
+
+  .title {
+    color: #006400; /* verde escuro */
+  }
+
+  .price {
+    color: #006400; /* verde escuro */
+  }
+
+  .data_payment,
+  .data_comp {
+    color: #006400; /* verde escuro */
+  }
+
+  .btn-next,
+  .btn-before {
+    background-color: #00008b; /* azul escuro */
+    color: #ffffff; /* branco */
+    padding: 10px 20px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .btn-next:hover,
+  .btn-before:hover {
+    opacity: 0.8;
+  }
